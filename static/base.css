@@ -1,0 +1,12 @@
+@font-face {
+    font-family: "Wiener Melange";
+    src: url("/fonts/Wiener_Melange_Black.otf") format("opentype")
+}
+
+:root {
+    /* color devs */
+}
+
+* {
+    font-family: "Wiener Melange"
+}

@@ -7,24 +7,35 @@
 	--color-black-light: #1a1a1a;
 	--color-black: #000;
 	--color-white: #fff;
-	--color-red: #EE302D;
+	--color-red: #ee302d;
 	--color-red-dark: #a72320;
 }
 
 * {
 	font-family: 'Wiener Melange';
-    padding: 0;
-    margin: 0;
+	padding: 0;
+	margin: 0;
 }
 
 html,
 body {
-    background: var(--color-black);
+	background: var(--color-black);
 	color: var(--color-white);
-
 }
 
 a {
 	color: var(--color-red);
-    text-decoration: none;
+	text-decoration: none;
+}
+
+.sr-only {
+	position: absolute;
+	width: 1px;
+	height: 1px;
+	padding: 0;
+	margin: -1px;
+	overflow: hidden;
+	clip: rect(0, 0, 0, 0);
+	white-space: nowrap;
+	border-width: 0;
 }

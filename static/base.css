@@ -1,12 +1,26 @@
 @font-face {
-    font-family: "Wiener Melange";
-    src: url("/fonts/Wiener_Melange_Black.otf") format("opentype")
+	font-family: 'Wiener Melange';
+	src: url('/fonts/Wiener_Melange_Black.otf') format('opentype');
 }
 
 :root {
-    /* color devs */
+	--color-black: #000;
+	--color-black-light: #1a1a1a;
+	--color-white: #fff;
+	--color-red: #EE302D;
 }
 
 * {
-    font-family: "Wiener Melange"
+	font-family: 'Wiener Melange';
+}
+
+html,
+body {
+	background: var(--color-black);
+	color: var(--color-white);
+
+}
+
+a {
+	color: var(--color-red);
 }

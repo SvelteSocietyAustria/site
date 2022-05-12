@@ -29,6 +29,5 @@ import { page } from "$app/stores";
     [aria-current] {
         color: var(--color-white);
         background-color: var(--color-red);
-        text-decoration: none;
     }
 </style>

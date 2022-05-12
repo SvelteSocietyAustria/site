@@ -27,6 +27,7 @@ import Discord from '$lib/icons/Discord.svelte';
 		background: var(--color-black-light);
 		padding: 0.5rem 1rem;
 		display: flex;
+        flex-wrap: wrap;
 		justify-content: center;
         align-items: center;
 	}

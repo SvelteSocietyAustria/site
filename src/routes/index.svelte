@@ -6,6 +6,16 @@
 			github: 'https://github.com/dreitzner'
 		},
 		{
+			displayName: 'Ermin Čeliković',
+			twitter: 'https://mobile.twitter.com/celikovic',
+			github: 'https://github.com/ermincelikovic'
+		},
+		{
+			displayName: 'Ivan Hofer',
+			twitter: 'https://twitter.com/ivanhofer_',
+			github: 'https://github.com/ivanhofer'
+		},
+		{
 			displayName: 'Jean-Yves Couët',
 			twitter: 'https://twitter.com/jycouet',
 			github: 'https://github.com/jycouet'

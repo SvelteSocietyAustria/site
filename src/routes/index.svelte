@@ -16,6 +16,11 @@
 			github: 'https://github.com/ivanhofer'
 		},
 		{
+			displayName: 'Jan-Dennis Drenkhahn',
+			twitter: 'https://twitter.com/crashoverried',
+			github: 'https://github.com/stillday'
+		},
+		{
 			displayName: 'Jean-Yves Couët',
 			twitter: 'https://twitter.com/jycouet',
 			github: 'https://github.com/jycouet'
@@ -62,6 +67,7 @@
 	.founder {
 		display: flex;
 		align-items: center;
+		justify-content: center;
 		margin-left: 1rem;
 	}
 

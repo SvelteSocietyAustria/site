@@ -1,29 +1,100 @@
+<script lang="ts">
+	import By from '$lib/components/By.svelte';
+	import { type TMeetup } from '$lib/components/TSvienna';
+
+	export let meetups: TMeetup[];
+
+	function getMonth(dateISO: string) {
+		const months = [
+			'Jan.',
+			'Feb.',
+			'March',
+			'April',
+			'May',
+			'June',
+			'July',
+			'Aug.',
+			'Sept.',
+			'Oct.',
+			'Nov.',
+			'Dec.'
+		];
+		const d = new Date(dateISO);
+		return months[d.getMonth()];
+	}
+</script>
+
 <h1>Planned Meetups</h1>
 <ul>
-	<li data-day="04" data-month="July">
-		<section>
-			<p class="meetupInfo">
-				<a href="https://lu.ma/2022-07-Svienna" target="_blank" rel="noopener noreferrer"
-					>2022/07 Svienna - Svelte Society Vienna</a
-				> by <a href="/chapters#svienna">Svienna</a>
-			</p>
-		</section>
-	</li>
+	{#each meetups as { dateISO, name, lumaLink, by, talks }}
+		<li data-day={new Date(dateISO).getDate()} data-month={getMonth(dateISO)}>
+			<section>
+				<p class="meetupInfo">
+					<a href={lumaLink} target="_blank" rel="noopener noreferrer">{name}</a>
+					<By {by} />
+				</p>
+			</section>
+		</li>
+
+		{#each talks as { githubAuthor, name }}
+			<div class="talk">
+				<img
+					width="20"
+					height="20"
+					src="/logos/Logo-Vienna.svg"
+					alt="Svelte Society Austria Logo"
+				/>
+				<span>
+					{name} <i>by</i>
+				</span>
+				{#if githubAuthor}
+					<img
+						class="rouned"
+						width="40"
+						height="40"
+						src={`https://github.com/${githubAuthor}.png`}
+						alt={`${githubAuthor} profile picture`}
+					/>
+				{:else}
+					You?
+				{/if}
+			</div>
+		{:else}
+			<div class="talk">
+				<i> No talks to announce yet. </i>
+			</div>
+		{/each}
+	{/each}
 </ul>
 
 <h2>Passed Meetups</h2>
 <p>Nothing to see here... 👋</p>
 
 <style>
-	* + * {
+	.talk {
 		margin-top: 1rem;
+		display: flex;
+		align-items: center;
 	}
+	.talk > * {
+		margin-right: 1rem;
+	}
+	.rouned {
+		border-radius: 100%;
+	}
+
+	h2 {
+		margin-top: 2rem;
+	}
+
 	ul {
+		margin-top: 2rem;
 		padding-left: 3.5rem;
 		list-style: none;
-        --border-radius: .5rem;
+		--border-radius: 0.5rem;
 	}
 	li {
+		margin-top: 2rem;
 		position: relative;
 		height: 3.5rem;
 		display: flex;
@@ -38,7 +109,7 @@
 		display: flex;
 		align-items: center;
 		justify-content: center;
-        z-index: 1;
+		z-index: 1;
 	}
 	li::before {
 		content: attr(data-day);

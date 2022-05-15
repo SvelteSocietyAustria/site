@@ -1,20 +1,38 @@
 <script lang="ts">
+	import { afterNavigate } from '$app/navigation';
 	import { page } from '$app/stores';
+	import { pageTitle } from '../stores/pageTitle';
+
+	afterNavigate((route: any) => {
+		const prefix = 'Svelte Society Austria'
+		const routeFound = routes.find(c=>c.href === route.to.pathname);
+		if(routeFound){
+			$pageTitle = `${prefix} - ${routeFound.name}`;
+		} else {
+			$pageTitle = prefix;
+		}
+	});
+
+	const routes: {name: string, href: string}[] = [
+		{ name: 'Home', href: '/' },
+		{ name: 'Meetups', href: '/meetups' },
+		{ name: 'Chapters', href: '/chapters' }
+	];
 </script>
 
+<svelte:head>
+	<title>{$pageTitle}</title>
+</svelte:head>
+
 <header>
-    <div class="flex items-center">
-        <img src="/logos/Logo-Svelte.svg" alt="Svelte Society Austria Logo" />
-        <div class="logoFont"><span class="sr-only">S</span>velte Socitey Austria</div>
-    </div>
+	<div class="flex items-center">
+		<img src="/logos/Logo-Svelte.svg" alt="Svelte Society Austria Logo" />
+		<div class="logoFont"><span class="sr-only">S</span>velte Socitey Austria</div>
+	</div>
 	<nav>
-		<a href="/" aria-current={'/' === $page.url.pathname ? 'page' : undefined}>home</a>
-		<a href="/meetups" aria-current={'/meetups' === $page.url.pathname ? 'page' : undefined}
-			>meetups</a
-		>
-		<a href="/chapters" aria-current={'/chapters' === $page.url.pathname ? 'page' : undefined}
-			>chapters</a
-		>
+		{#each routes as { name, href }}
+			<a {href} aria-current={href === $page.url.pathname ? 'page' : undefined}>{name}</a>
+		{/each}
 	</nav>
 </header>
 
@@ -27,9 +45,9 @@
 		align-items: center;
 		border-bottom: 1px solid var(--color-red);
 	}
-    .logoFont {
-        font-size: 1.5rem;
-    }
+	.logoFont {
+		font-size: 1.5rem;
+	}
 	nav {
 		display: flex;
 		margin-top: 1rem;

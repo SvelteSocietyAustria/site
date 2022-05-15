@@ -39,3 +39,11 @@ a {
 	white-space: nowrap;
 	border-width: 0;
 }
+
+.flex {
+	display: flex;
+}
+
+.items-center {
+	align-items: center;
+}

@@ -3,11 +3,17 @@
 </script>
 
 <header>
-	<img src="/logos/Logo-Dark-Tagline.svg" alt="Logo Svelte Society Vienna" />
+    <div class="flex items-center">
+        <img src="/logos/Logo-Svelte.svg" alt="Svelte Society Austria Logo" />
+        <div class="logoFont"><span class="sr-only">S</span>velte Socitey Austria</div>
+    </div>
 	<nav>
 		<a href="/" aria-current={'/' === $page.url.pathname ? 'page' : undefined}>home</a>
-		<a href="/svienna" aria-current={'/svienna' === $page.url.pathname ? 'page' : undefined}
-			>svienna - svelte society vienna</a
+		<a href="/meetups" aria-current={'/meetups' === $page.url.pathname ? 'page' : undefined}
+			>meetups</a
+		>
+		<a href="/chapters" aria-current={'/chapters' === $page.url.pathname ? 'page' : undefined}
+			>chapters</a
 		>
 	</nav>
 </header>
@@ -21,6 +27,9 @@
 		align-items: center;
 		border-bottom: 1px solid var(--color-red);
 	}
+    .logoFont {
+        font-size: 1.5rem;
+    }
 	nav {
 		display: flex;
 		margin-top: 1rem;

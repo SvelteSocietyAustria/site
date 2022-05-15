@@ -1,13 +1,13 @@
-<h1>Svienna - Svelte Society Vienna</h1>
-<p>
-	We are a volunteer local network of Svelte fans that strive to promote Svelte and its ecosystem.
-</p>
-<h2>Planned Meetups</h2>
+<h1>Planned Meetups</h1>
 <ul>
 	<li data-day="04" data-month="July">
-		<a href="https://lu.ma/2022-07-Svienna" target="_blank" rel="noopener noreferrer"
-			>2022/07 Svienna - Svelte Society Vienna</a
-		>
+		<section>
+			<p class="meetupInfo">
+				<a href="https://lu.ma/2022-07-Svienna" target="_blank" rel="noopener noreferrer"
+					>2022/07 Svienna - Svelte Society Vienna</a
+				> by <a href="/chapters#svienna">Svienna</a>
+			</p>
+		</section>
 	</li>
 </ul>
 
@@ -25,7 +25,7 @@
 	}
 	li {
 		position: relative;
-		height: 3rem;
+		height: 3.5rem;
 		display: flex;
 		align-items: center;
 	}
@@ -45,7 +45,7 @@
 		top: 0;
 		background-color: var(--color-white);
 		color: var(--color-black);
-		height: 1.8rem;
+		height: 2rem;
 		font-size: 1.2rem;
 		border-top-left-radius: var(--border-radius);
 		border-top-right-radius: var(--border-radius);
@@ -54,19 +54,19 @@
 		content: attr(data-month);
 		bottom: 0;
 		background-color: var(--color-red);
-		height: 1.2rem;
+		height: 1.5rem;
 		font-size: 0.7rem;
 		border-bottom-left-radius: var(--border-radius);
 		border-bottom-right-radius: var(--border-radius);
 	}
 
-	a {
+	section {
 		height: calc(100% - 6px);
 		padding-right: 0.8rem;
 		padding-left: 1.6rem;
-		transform: translateX(-0.8rem);
 		display: flex;
 		align-items: center;
+		transform: translateX(-0.8rem);
 		background-color: var(--color-black-light);
 		border: 3px solid var(--color-white);
 		border-left: none;

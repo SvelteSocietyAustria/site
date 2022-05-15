@@ -9,5 +9,6 @@ import Header from "$lib/components/Header.svelte";
 <style>
     main {
         padding: 1rem;
+        margin-bottom: 3.5rem;
     }
 </style>

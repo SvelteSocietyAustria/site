@@ -1,6 +1,7 @@
 <script lang="ts">
 	import By from '$lib/components/By.svelte';
 	import { type TMeetup } from '$lib/components/TSvienna';
+	import GitHubAvatar from '$lib/components/GitHubAvatar.svelte';
 
 	export let meetups: TMeetup[];
 
@@ -45,16 +46,11 @@
 					alt="Svelte Society Austria Logo"
 				/>
 				<span>
-					{name} <i>by</i>
+					{name}
 				</span>
+				<span><i>by</i></span>
 				{#if githubAuthor}
-					<img
-						class="rouned"
-						width="40"
-						height="40"
-						src={`https://github.com/${githubAuthor}.png`}
-						alt={`${githubAuthor} profile picture`}
-					/>
+					<GitHubAvatar {githubAuthor} />
 				{:else}
 					You?
 				{/if}
@@ -78,9 +74,6 @@
 	}
 	.talk > * {
 		margin-right: 1rem;
-	}
-	.rouned {
-		border-radius: 100%;
 	}
 
 	h2 {

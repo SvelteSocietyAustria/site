@@ -4,7 +4,7 @@
 </script>
 
 {#if by === 'svienna'}
-	by <a href="/chapters#svienna">Svienna</a>
+	<i>by</i>&nbsp;&nbsp;<a href="/chapters#svienna">Svienna</a>
 {:else}
-	by ???
+	<i>by</i> ???
 {/if}

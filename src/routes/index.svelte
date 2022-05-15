@@ -1,29 +1,32 @@
 <script lang="ts">
-	const founders: { displayName: string; twitter: string; github: string }[] = [
+import GitHubAvatar from "../lib/components/GitHubAvatar.svelte";
+
+
+	const founders: { displayName: string; twitter: string; githubAuthor: string }[] = [
 		{
 			displayName: 'Domenik Reitzner',
 			twitter: 'https://twitter.com/reitznerdomenik',
-			github: 'https://github.com/dreitzner'
+			githubAuthor: 'dreitzner'
 		},
 		{
 			displayName: 'Ermin Čeliković',
 			twitter: 'https://mobile.twitter.com/celikovic',
-			github: 'https://github.com/ermincelikovic'
+			githubAuthor: 'ermincelikovic'
 		},
 		{
 			displayName: 'Ivan Hofer',
 			twitter: 'https://twitter.com/ivanhofer_',
-			github: 'https://github.com/ivanhofer'
+			githubAuthor: 'ivanhofer'
 		},
 		{
 			displayName: 'Jan-Dennis Drenkhahn',
 			twitter: 'https://twitter.com/crashoverried',
-			github: 'https://github.com/stillday'
+			githubAuthor: 'stillday'
 		},
 		{
 			displayName: 'Jean-Yves Couët',
 			twitter: 'https://twitter.com/jycouet',
-			github: 'https://github.com/jycouet'
+			githubAuthor: 'jycouet'
 		}
 	];
 </script>
@@ -34,15 +37,15 @@
 <h2>Founding members</h2>
 
 <ul>
-	{#each founders as { displayName, twitter, github }}
+	{#each founders as { displayName, twitter, githubAuthor }}
 		<li>
 			<div class="founder">
-				<img width="70" height="70" src={`${github}.png`} alt={`${displayName} profile picture`} />
+				<GitHubAvatar {githubAuthor} size={70}></GitHubAvatar>
 				<div class="ml-4">
 					<h3>{displayName}</h3>
 					<p>
 						<a href={twitter} target="_blanck" rel="noopener noreferrer">twitter</a> /
-						<a href={github} target="_blanck" rel="noopener noreferrer">github</a>
+						<a href="https://github.com/{githubAuthor}" target="_blanck" rel="noopener noreferrer">github</a>
 					</p>
 				</div>
 			</div>

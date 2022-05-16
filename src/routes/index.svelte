@@ -57,9 +57,6 @@ import GitHubAvatar from "../lib/components/GitHubAvatar.svelte";
 	h2 {
 		margin-top: 3rem;
 	}
-	img {
-		border-radius: 100%;
-	}
 
 	li {
 		list-style-type: none;

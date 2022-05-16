@@ -1,5 +1,5 @@
 <script lang="ts">
-	import type { TMeetupBy } from '$lib/components/TMeetup';
+	import type { TMeetupBy } from '$lib/components/TSvienna';
 	export let by: TMeetupBy = 'svienna';
 </script>
 

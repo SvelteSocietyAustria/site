@@ -1,6 +1,6 @@
 <script lang="ts">
 	import By from '$lib/components/By.svelte';
-	import { type TMeetup } from '$lib/components/TSvienna';
+	import type { TMeetup } from '$lib/components/TSvienna';
 	import GitHubAvatar from '$lib/components/GitHubAvatar.svelte';
 
 	export let meetups: TMeetup[];

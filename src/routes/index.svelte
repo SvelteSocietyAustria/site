@@ -57,7 +57,7 @@
 <section class="sponsors">
 	<h2>Sponsors</h2>
 	<div class="flex -list">
-		<a class="flex" href="https://www.emakina.com/">
+		<a class="flex" href="https://www.emakina.com/de-at">
 			<img src="/logos/Logo-Emakina.svg" alt="Emakina CEE Logo" />
 			Emakina CEE
 		</a>

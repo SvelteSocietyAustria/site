@@ -2,4 +2,4 @@
 
 _founded 12 of May 2022_
 
-Website: [link](https://site-3lz.pages.dev/).
+Website: [link](https://austria.sveltesociety.dev/).

@@ -8,9 +8,9 @@ export async function get() {
 			lumaLink: 'https://lu.ma/2022-07-Svienna',
 			by: 'svienna',
 			talks: [
-				{ name: 'contact us' },
+				{ name: 'From zero to package by the end of the talk', githubAuthor: 'ivanhofer' },
 				{ name: 'What if using GraphQL would be easy? Especially in SvelteKit!', githubAuthor: 'jycouet' },
-				{ name: 'contact us' },
+				{ name: 'Svackage - Svelte package inception with turborepo', githubAuthor: 'dreitzner' },
 			]
 		},
 		// {

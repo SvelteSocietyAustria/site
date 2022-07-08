@@ -35,32 +35,36 @@
 						<By {by} />
 					</p>
 				</section>
+				{#each talks as { githubAuthor, name, youtubeReplayLink }}
+					<div class="talk">
+						<img
+							width="20"
+							height="20"
+							src="/logos/Logo-Vienna.svg"
+							alt="Svelte Society Austria Logo"
+						/>
+						{#if youtubeReplayLink}
+							<a href={youtubeReplayLink} class="rewatch">
+								<span class="sr-only">watch the</span>
+								[Video]
+							</a>
+						{/if}
+						<span>
+							{name}
+						</span>
+						<span><i>by</i></span>
+						{#if githubAuthor}
+							<GitHubAvatar {githubAuthor} />
+						{:else}
+							You?
+						{/if}
+					</div>
+				{:else}
+					<div class="talk">
+						<i> No talks to announce yet. </i>
+					</div>
+				{/each}
 			</li>
-
-			{#each talks as { githubAuthor, name }}
-				<div class="talk">
-					<img
-						width="20"
-						height="20"
-						src="/logos/Logo-Vienna.svg"
-						alt="Svelte Society Austria Logo"
-					/>
-					<span>
-						{name}
-					</span>
-					<span><i>by</i></span>
-					{#if githubAuthor}
-						<GitHubAvatar {githubAuthor} />
-					{:else}
-						You?
-					{/if}
-					<!-- Add video here -->
-				</div>
-			{:else}
-				<div class="talk">
-					<i> No talks to announce yet. </i>
-				</div>
-			{/each}
 		{/each}
 	</ul>
 {:else}
@@ -85,6 +89,12 @@
 		margin-right: 1rem;
 	}
 
+	@media (max-width: 1024px) {
+		.talk {
+			margin-left: -2.2rem;
+		}
+	}
+
 	ul {
 		margin-top: 2rem;
 		padding-left: 3.5rem;
@@ -94,9 +104,9 @@
 	li {
 		margin-top: 2rem;
 		position: relative;
-		height: 3.5rem;
 		display: flex;
-		align-items: center;
+		flex-direction: column;
+		justify-items: center;
 	}
 
 	li::before,
@@ -121,7 +131,7 @@
 	}
 	li::after {
 		content: attr(data-month);
-		bottom: 0;
+		top: 2rem;
 		background-color: var(--color-red);
 		height: 1.5rem;
 		font-size: 0.7rem;
@@ -130,7 +140,8 @@
 	}
 
 	section {
-		height: calc(100% - 6px);
+		height: calc(3.5rem - 6px);
+		max-width: 64rem;
 		padding-right: 0.8rem;
 		padding-left: 1.6rem;
 		display: flex;
@@ -141,5 +152,9 @@
 		border-left: none;
 		border-top-right-radius: var(--border-radius);
 		border-bottom-right-radius: var(--border-radius);
+	}
+
+	.rewatch {
+		color: var(--color-red-dark);
 	}
 </style>

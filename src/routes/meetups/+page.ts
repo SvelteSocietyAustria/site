@@ -25,14 +25,24 @@ export const load: PageLoad = () => {
 					youtubeReplayLink: 'https://youtu.be/CjtlKDDJAf0'
 				}
 			]
-		}
-		// {
-		// 	dateISO: '2022-09-07T16:00:00.000Z',
-		// 	name: '2022/09 Svienna - TEST',
-		// 	lumaLink: 'https://lu.ma/2022-07-Svienna',
-		// 	by: 'svienna',
-		// 	talks: []
-		// }
+		},
+		{
+			dateISO: '2022-10-24T16:00:00.000Z',
+			name: '2022/10 Svienna - Svelte Society Vienna',
+			lumaLink: 'https://lu.ma/2022-10-Svienna',
+			by: 'svienna',
+			talks: [
+				{
+					name: 'contact us'
+				},
+				{
+					name: 'contact us'
+				},
+				{
+					name: 'contact us'
+				}
+			]
+		},
 	];
 
 	return { meetups };

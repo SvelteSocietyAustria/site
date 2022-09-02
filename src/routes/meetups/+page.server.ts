@@ -1,6 +1,6 @@
 import type { TMeetup } from '$lib/components/TSvienna';
 
-export async function GET() {
+export async function load() {
 	const meetups: TMeetup[] = [
 		{
 			dateISO: '2022-07-04T16:00:00.000Z',
@@ -22,5 +22,5 @@ export async function GET() {
 		// }
 	];
 
-	return { body: { meetups } };
+	return { meetups };
 }

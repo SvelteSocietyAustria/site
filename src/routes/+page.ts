@@ -1,7 +1,11 @@
 import type { PageLoad } from './$types';
 
+type TFounder = { displayName: string; twitter: string; githubAuthor: string };
+
+type TSponsor = { name: string; website: string; logo: string };
+
 export const load: PageLoad = () => {
-	const founders: { displayName: string; twitter: string; githubAuthor: string }[] = [
+	const founders: TFounder[] = [
 		{
 			displayName: 'Domenik Reitzner',
 			twitter: 'https://twitter.com/reitznerdomenik',
@@ -29,5 +33,18 @@ export const load: PageLoad = () => {
 		}
 	];
 
-	return { founders };
-}
+	const sponsors: TSponsor[] = [
+		{
+			name: 'Emakina CEE',
+			website: 'https://www.emakina.com/de-at',
+			logo: '/logos/Logo-Emakina.svg'
+		},
+		{
+			name: 'iteratec GmbH',
+			website: 'https://www.iteratec.com/',
+			logo: '/logos/Logo-iteratec.png'
+		}
+	];
+
+	return { founders, sponsors };
+};

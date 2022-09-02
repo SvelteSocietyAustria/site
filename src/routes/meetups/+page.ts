@@ -36,4 +36,4 @@ export const load: PageLoad = () => {
 	];
 
 	return { meetups };
-}
+};

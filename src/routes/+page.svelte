@@ -32,14 +32,12 @@
 <section class="sponsors">
 	<h2>Sponsors</h2>
 	<div class="flex -list">
-		<a class="flex" href="https://www.emakina.com/de-at" rel="noopener" target="_blank">
-			<img src="/logos/Logo-Emakina.svg" alt="Emakina CEE Logo" />
-			Emakina CEE
-		</a>
-		<a class="flex" href="https://www.iteratec.com/" rel="noopener" target="_blank">
-			<img src="/logos/Logo-iteratec.png" alt="iteratec GmbH Logo" />
-			iteratec GmbH
-		</a>
+		{#each data.sponsors as { name, website, logo }}
+			<a class="flex" href={website} rel="noopener" target="_blank">
+				<img src={logo} alt="{name} Logo" />
+				{name}
+			</a>
+		{/each}
 		<a class="flex" href="mailto:reitznerdomenik+svelteaustria@gmail.com"> Contact us </a>
 	</div>
 </section>

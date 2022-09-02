@@ -1,6 +1,7 @@
 import type { TMeetup } from '$lib/components/TSvienna';
+import type { PageLoad } from './$types';
 
-export async function load() {
+export const load: PageLoad = () => {
 	const meetups: TMeetup[] = [
 		{
 			dateISO: '2022-07-04T16:00:00.000Z',

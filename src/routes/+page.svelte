@@ -36,6 +36,10 @@
 			<img src="/logos/Logo-Emakina.svg" alt="Emakina CEE Logo" />
 			Emakina CEE
 		</a>
+		<a class="flex" href="https://www.iteratec.com/">
+			<img src="/logos/Logo-iteratec.png" alt="iteratec GmbH Logo" />
+			iteratec GmbH
+		</a>
 		<a class="flex" href="mailto:reitznerdomenik+svelteaustria@gmail.com"> Contact us </a>
 	</div>
 </section>

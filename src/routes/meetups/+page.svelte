@@ -1,15 +1,16 @@
 <script lang="ts">
 	import type { TMeetup } from '$lib/components/TSvienna';
 	import TalkList from '$lib/components/TalkList.svelte';
+	import type { PageData } from './$types';
 
-	export let meetups: TMeetup[];
+	export let data: PageData;
 
 	const today = new Date();
 
 	let pastMeetups: TMeetup[] = [];
 	let futureMeetups: TMeetup[] = [];
 
-	meetups.forEach((m) => {
+	data.meetups.forEach((m) => {
 		new Date(m.dateISO) < today
 			? (pastMeetups = [...pastMeetups, m])
 			: (futureMeetups = [...futureMeetups, m]);

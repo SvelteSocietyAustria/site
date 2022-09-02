@@ -1,22 +1,25 @@
 <!DOCTYPE html>
 <html lang="en">
+	<head>
+		<meta charset="utf-8" />
+		<link rel="icon" href="%sveltekit.assets%/favicon.png" />
+		<meta name="viewport" content="width=device-width, initial-scale=1" />
+		<link rel="stylesheet" href="%sveltekit.assets%/base.css" />
+		<meta
+			name="description"
+			content="Svelte Society Austria - We are a volunteer local network of Svelte fans that strive to promote Svelte and its ecosystem in Austria"
+		/>
+		<meta name="theme-color" content="#1a1a1a" />
+		<meta name="keywords" content="svelte, society, austria, svienna" />
+		<meta name="author" content="Svelte Society Austria" />
+		<meta
+			property="og:image"
+			content="https://austria.sveltesociety.dev/images/svienna-logos.png>"
+		/>
+		%sveltekit.head%
+	</head>
 
-<head>
-	<meta charset="utf-8" />
-	<link rel="icon" href="%svelte.assets%/favicon.png" />
-	<meta name="viewport" content="width=device-width, initial-scale=1" />
-	<link rel="stylesheet" href="%svelte.assets%/base.css" />
-	<meta name="description"
-		content="Svelte Society Austria - We are a volunteer local network of Svelte fans that strive to promote Svelte and its ecosystem in Austria" />
-	<meta name='theme-color' content='#1a1a1a'>
-	<meta name="keywords" content="svelte, society, austria, svienna">
-	<meta name="author" content="Svelte Society Austria">
-	<meta property="og:image" content="https://austria.sveltesociety.dev/images/svienna-logos.png>" />
-	%svelte.head%
-</head>
-
-<body>
-	<div>%svelte.body%</div>
-</body>
-
+	<body>
+		<div>%sveltekit.body%</div>
+	</body>
 </html>

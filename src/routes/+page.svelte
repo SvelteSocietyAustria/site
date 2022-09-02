@@ -1,33 +1,8 @@
 <script lang="ts">
 	import GitHubAvatar from '../lib/components/GitHubAvatar.svelte';
+	import type { PageData } from './$types';
 
-	const founders: { displayName: string; twitter: string; githubAuthor: string }[] = [
-		{
-			displayName: 'Domenik Reitzner',
-			twitter: 'https://twitter.com/reitznerdomenik',
-			githubAuthor: 'dreitzner'
-		},
-		{
-			displayName: 'Ermin Čeliković',
-			twitter: 'https://mobile.twitter.com/celikovic',
-			githubAuthor: 'ermincelikovic'
-		},
-		{
-			displayName: 'Ivan Hofer',
-			twitter: 'https://twitter.com/ivanhofer_',
-			githubAuthor: 'ivanhofer'
-		},
-		{
-			displayName: 'Jan-Dennis Drenkhahn',
-			twitter: 'https://twitter.com/crashoverried',
-			githubAuthor: 'stillday'
-		},
-		{
-			displayName: 'Jean-Yves Couët',
-			twitter: 'https://twitter.com/jycouet',
-			githubAuthor: 'jycouet'
-		}
-	];
+	export let data: PageData;
 </script>
 
 <h1>Welcome to Svelte Society Austria</h1>
@@ -36,7 +11,7 @@
 <h2>Founding members</h2>
 
 <ul>
-	{#each founders as { displayName, twitter, githubAuthor }}
+	{#each data.founders as { displayName, twitter, githubAuthor }}
 		<li>
 			<div class="founder">
 				<GitHubAvatar {githubAuthor} size={70} />
@@ -57,10 +32,12 @@
 <section class="sponsors">
 	<h2>Sponsors</h2>
 	<div class="flex -list">
-		<a class="flex" href="https://www.emakina.com/de-at">
-			<img src="/logos/Logo-Emakina.svg" alt="Emakina CEE Logo" />
-			Emakina CEE
-		</a>
+		{#each data.sponsors as { name, website, logo }}
+			<a class="flex" href={website} rel="noopener" target="_blank">
+				<img src={logo} alt="{name} Logo" />
+				{name}
+			</a>
+		{/each}
 		<a class="flex" href="mailto:reitznerdomenik+svelteaustria@gmail.com"> Contact us </a>
 	</div>
 </section>

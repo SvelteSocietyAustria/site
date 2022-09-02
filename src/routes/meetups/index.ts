@@ -1,6 +1,6 @@
 import type { TMeetup } from '$lib/components/TSvienna';
 
-export async function get() {
+export async function GET() {
 	const meetups: TMeetup[] = [
 		{
 			dateISO: '2022-07-04T16:00:00.000Z',

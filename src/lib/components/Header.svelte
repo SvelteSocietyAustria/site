@@ -4,16 +4,16 @@
 	import { pageTitle } from '../stores/pageTitle';
 
 	afterNavigate((route: any) => {
-		const prefix = 'Svelte Society Austria'
-		const routeFound = routes.find(c=>c.href === route.to.pathname);
-		if(routeFound){
+		const prefix = 'Svelte Society Austria';
+		const routeFound = routes.find((c) => c.href === route.to.pathname);
+		if (routeFound) {
 			$pageTitle = `${prefix} - ${routeFound.name}`;
 		} else {
 			$pageTitle = prefix;
 		}
 	});
 
-	const routes: {name: string, href: string}[] = [
+	const routes: { name: string; href: string }[] = [
 		{ name: 'Home', href: '/' },
 		{ name: 'Meetups', href: '/meetups' },
 		{ name: 'Chapters', href: '/chapters' }

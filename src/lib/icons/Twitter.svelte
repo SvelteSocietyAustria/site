@@ -1,7 +1,7 @@
 <script lang="ts">
-export let width = 410;
-export let height= 410;
-export let fill = 'currentColor';
+	export let width = 410;
+	export let height = 410;
+	export let fill = 'currentColor';
 </script>
 
 <svg

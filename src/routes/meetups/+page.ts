@@ -33,11 +33,12 @@ export const load: PageLoad = () => {
 			by: 'svienna',
 			talks: [
 				{
-					name: 'Your Custom Component Library: Improving Workflows and DX in svelte',
-					githubAuthor: 'jjnp',
+					name: 'The easy way - an introduction to Sveltekit',
+					githubAuthor: 'dreitzner'
 				},
 				{
-					name: 'contact us'
+					name: 'Your Custom Component Library: Improving Workflows and DX in svelte',
+					githubAuthor: 'jjnp',
 				},
 				{
 					name: 'contact us'

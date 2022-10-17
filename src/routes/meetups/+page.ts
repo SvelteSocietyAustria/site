@@ -41,7 +41,8 @@ export const load: PageLoad = () => {
 					githubAuthor: 'jjnp',
 				},
 				{
-					name: 'contact us'
+					name: 'Test it with playwright, you must!',
+					githubAuthor: 'jycouet',
 				}
 			]
 		},

@@ -32,5 +32,8 @@
 	"type": "module",
 	"volta": {
 		"node": "17.9.0"
+	},
+	"dependencies": {
+		"html2canvas": "^1.4.1"
 	}
 }

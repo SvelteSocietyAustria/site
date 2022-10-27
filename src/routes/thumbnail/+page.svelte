@@ -2,15 +2,24 @@
 	import GitHubAvatar from '$lib/components/GitHubAvatar.svelte';
 	import html2canvas from 'html2canvas';
 
-	let title = 'Your Custom Component Library: Improving Workflows and DX in svelte';
-	let githubAuthor = 'jjnp';
-	let name = 'Jacob Palecek';
+	let title = 'Your talk title, it will be awesome!';
+	let githubAuthor = 'jycouet';
+	let name = '';
 
 	async function dl() {
 		const el = document.querySelector('#tumb');
 		if (el) {
+			let proxy = '';
+
+			const existingGithubAuthorsForPicture = ['dreitzner', 'jjnp', 'jycouet'];
+			if (existingGithubAuthorsForPicture.includes(githubAuthor)) {
+				// We have to have it locally if not we can't download :( the image with the picture.
+				// HELP: Maybe someone know how to get it in the final image with the github picture directly?
+				proxy = `/github/${githubAuthor}.jpg`;
+			}
+
 			const canvas = await html2canvas(el as any, {
-				proxy: `/github/${githubAuthor}.jpg` // We have to have it locally if not we can't download :( the image with the picture.
+				proxy
 			});
 			canvas.style.display = 'none';
 			document.body.appendChild(canvas);
@@ -23,20 +32,37 @@
 	}
 </script>
 
-<div>
-	<label>Title: </label>
-	<input type="text" bind:value={title} />
+<h1>How YOUR thumbnail will look like on Youtube?</h1>
+<p>Just try the tumbnail generator.</p>
+<br />
+<br />
+<div class="group">
+	<div style="flex-grow: 1;">
+		<div>
+			<label for="title">Title </label>
+		</div>
+		<input
+			style="width: 100%"
+			name="title"
+			type="text"
+			placeholder="*"
+			required
+			bind:value={title}
+		/>
+	</div>
+	<div>
+		<div>
+			<label for="githubAuthor">Github Author </label>
+		</div>
+		<input name="githubAuthor" type="text" placeholder="*" bind:value={githubAuthor} />
+	</div>
+	<div>
+		<div>
+			<label for="name">Name </label>
+		</div>
+		<input name="name" type="text" bind:value={name} placeholder="optional" />
+	</div>
 </div>
-<div>
-	<label>Github Author: </label>
-	<input type="text" bind:value={githubAuthor} />
-</div>
-<div>
-	<label>Name: </label>
-	<input type="text" bind:value={name} />
-</div>
-
-<button style="height: 3rem; width: 10rem;" on:click={dl}>Download</button>
 
 <div class="frame" id="tumb">
 	<div class="logo">
@@ -50,12 +76,16 @@
 		<GitHubAvatar size={300} {githubAuthor} />
 	</div>
 	<div class="gh-name">
-		{name}
+		{name || githubAuthor}
 	</div>
 	<div class="title">
 		{title}
 	</div>
 </div>
+<br />
+<button style="height: 3rem; width: 10rem;" on:click={dl}>Download</button>*
+<br />
+*<i>Side note: For your picture to be downloaded you need to have it locally.</i>
 
 <style>
 	.frame {
@@ -64,6 +94,13 @@
 		border: 1px solid var(--color-black-light);
 		width: 1280px;
 		height: 720px;
+	}
+
+	.group {
+		width: 1280px;
+		display: flex;
+		flex-direction: row;
+		gap: 1rem;
 	}
 
 	.logo {

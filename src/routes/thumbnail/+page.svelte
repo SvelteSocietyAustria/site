@@ -7,29 +7,18 @@
 	let githubAuthor = $page.url.searchParams.get('who') || 'jycouet';
 	let name = '';
 
-	async function dl() {
+	async function download() {
 		const el = document.querySelector('#tumb');
-		if (el) {
-			let proxy = '';
+		if (!el) return;
 
-			const existingGithubAuthorsForPicture = ['dreitzner', 'jjnp', 'jycouet'];
-			if (existingGithubAuthorsForPicture.includes(githubAuthor)) {
-				// We have to have it locally if not we can't download :( the image with the picture.
-				// HELP: Maybe someone know how to get it in the final image with the github picture directly?
-				proxy = `/github/${githubAuthor}.jpg`;
-			}
-
-			const canvas = await html2canvas(el as any, {
-				proxy
-			});
-			canvas.style.display = 'none';
-			document.body.appendChild(canvas);
-			const image = canvas.toDataURL();
-			const a = document.createElement('a');
-			a.setAttribute('download', `${name || githubAuthor} - ${title}.png`);
-			a.setAttribute('href', image);
-			a.click();
-		}
+		const canvas = await html2canvas(el as HTMLElement);
+		canvas.style.display = 'none';
+		document.body.appendChild(canvas);
+		const image = canvas.toDataURL();
+		const a = document.createElement('a');
+		a.setAttribute('download', `${name || githubAuthor} - ${title}.png`);
+		a.setAttribute('href', image);
+		a.click();
 	}
 </script>
 
@@ -74,7 +63,7 @@
 		/>
 	</div>
 	<div class="gh-img">
-		<GitHubAvatar size={300} {githubAuthor} />
+		<GitHubAvatar size={300} {githubAuthor} asObjectUrl />
 	</div>
 	<div class="gh-name">
 		{name || githubAuthor}
@@ -84,7 +73,7 @@
 	</div>
 </div>
 <br />
-<button style="height: 3rem; width: 10rem;" on:click={dl}>Download</button>*
+<button style="height: 3rem; width: 10rem;" on:click={download}>Download</button>*
 <br />
 *<i>Side note: For your picture to be downloaded you need to have it locally.</i>
 

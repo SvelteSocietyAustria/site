@@ -25,7 +25,7 @@
 			document.body.appendChild(canvas);
 			const image = canvas.toDataURL();
 			const a = document.createElement('a');
-			a.setAttribute('download', `${name} - ${title}.png`);
+			a.setAttribute('download', `${name || githubAuthor} - ${title}.png`);
 			a.setAttribute('href', image);
 			a.click();
 		}

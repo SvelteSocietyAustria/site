@@ -8,6 +8,7 @@
 	<span>&copy; Svelte Society Austria</span>
 	<!-- discord, twitter -->
 	<!-- https://twitter.com/svelteaustria -->
+	<a href="/thumbnail">Thumbnail</a>
 	<a href="https://sveltesociety.dev/about">code of conduct</a>
 	<a
 		class="icon"

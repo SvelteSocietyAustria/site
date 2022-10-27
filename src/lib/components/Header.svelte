@@ -5,7 +5,7 @@
 
 	afterNavigate((route: any) => {
 		const prefix = 'Svelte Society Austria';
-		const routeFound = routes.find((c) => c.href === route.to.pathname);
+		const routeFound = routes.find((c) => c.href === route.to.url.pathname);
 		if (routeFound) {
 			$pageTitle = `${prefix} - ${routeFound.name}`;
 		} else {

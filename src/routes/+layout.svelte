@@ -7,7 +7,7 @@
 	let title: string;
 
 	afterNavigate(({ to }) => {
-		const firstUrlSegment = to.pathname.split('/')[1] || 'Home';
+		const firstUrlSegment = to.url.pathname.split('/')[1] || 'Home';
 		title = firstUrlSegment.slice(0, 1).toUpperCase() + firstUrlSegment.slice(1);
 	});
 </script>

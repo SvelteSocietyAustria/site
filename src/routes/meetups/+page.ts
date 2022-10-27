@@ -4,6 +4,26 @@ import type { PageLoad } from './$types';
 export const load: PageLoad = () => {
 	const meetups: TMeetup[] = [
 		{
+			dateISO: '2022-10-24T16:00:00.000Z',
+			name: '2022/10 Svienna - Svelte Society Vienna',
+			lumaLink: 'https://lu.ma/2022-10-Svienna',
+			by: 'svienna',
+			talks: [
+				{
+					name: 'The easy way - an introduction to Sveltekit',
+					githubAuthor: 'dreitzner'
+				},
+				{
+					name: 'Your Custom Component Library: Improving Workflows and DX in svelte',
+					githubAuthor: 'jjnp',
+				},
+				{
+					name: 'Test it with playwright, you must!',
+					githubAuthor: 'jycouet',
+				}
+			]
+		},
+		{
 			dateISO: '2022-07-04T16:00:00.000Z',
 			name: '2022/07 Svienna - Svelte Society Vienna',
 			lumaLink: 'https://lu.ma/2022-07-Svienna',
@@ -23,26 +43,6 @@ export const load: PageLoad = () => {
 					name: 'Svackage - Svelte package inception with turborepo',
 					githubAuthor: 'dreitzner',
 					youtubeReplayLink: 'https://youtu.be/CjtlKDDJAf0'
-				}
-			]
-		},
-		{
-			dateISO: '2022-10-24T16:00:00.000Z',
-			name: '2022/10 Svienna - Svelte Society Vienna',
-			lumaLink: 'https://lu.ma/2022-10-Svienna',
-			by: 'svienna',
-			talks: [
-				{
-					name: 'The easy way - an introduction to Sveltekit',
-					githubAuthor: 'dreitzner'
-				},
-				{
-					name: 'Your Custom Component Library: Improving Workflows and DX in svelte',
-					githubAuthor: 'jjnp',
-				},
-				{
-					name: 'Test it with playwright, you must!',
-					githubAuthor: 'jycouet',
 				}
 			]
 		},

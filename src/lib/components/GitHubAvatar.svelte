@@ -8,7 +8,7 @@
 		class="rouned"
 		width={size}
 		height={size}
-		src={`https://github.com/${githubAuthor}.png`}
+		src={`https://github.com/${githubAuthor}.png?v=${new Date().getTime()}`}
 		alt={`${githubAuthor} profile picture`}
 	/>
 </a>

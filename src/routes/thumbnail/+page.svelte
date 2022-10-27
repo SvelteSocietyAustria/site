@@ -1,9 +1,10 @@
 <script lang="ts">
+	import { page } from '$app/stores';
 	import GitHubAvatar from '$lib/components/GitHubAvatar.svelte';
 	import html2canvas from 'html2canvas';
 
-	let title = 'Your talk title, it will be awesome!';
-	let githubAuthor = 'jycouet';
+	let title = $page.url.searchParams.get('title') || 'Your awesome title, it will be great 🎉!';
+	let githubAuthor = $page.url.searchParams.get('who') || 'jycouet';
 	let name = '';
 
 	async function dl() {

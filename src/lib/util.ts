@@ -1,0 +1,1 @@
+export const meetupToSlug = (name: string) => name.replace(/[^0-9a-z]/gi, '-').replace(/-+/g, '-');

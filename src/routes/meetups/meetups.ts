@@ -5,6 +5,7 @@ export const meetups: TMeetup[] = [
         name: '2022/10 Svienna - Svelte Society Vienna',
         lumaLink: 'https://lu.ma/2022-10-Svienna',
         by: 'svienna',
+        pictureCount: 14,
         talks: [
             {
                 name: 'The easy way - an introduction to Sveltekit',
@@ -25,6 +26,7 @@ export const meetups: TMeetup[] = [
         name: '2022/07 Svienna - Svelte Society Vienna',
         lumaLink: 'https://lu.ma/2022-07-Svienna',
         by: 'svienna',
+        pictureCount: 10,
         talks: [
             {
                 name: 'From zero to package by the end of the talk',

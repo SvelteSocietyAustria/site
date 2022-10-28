@@ -3,6 +3,7 @@ export type TMeetup = {
 	name: string;
 	lumaLink: string;
 	by: TMeetupBy;
+	pictureCount: number;
 	talks: TTalk[];
 };
 

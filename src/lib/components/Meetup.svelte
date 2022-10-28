@@ -3,15 +3,16 @@
 	import By from "$lib/components/By.svelte";
 	import Talk from "$lib/components/Talk.svelte";
 	import { meetupToSlug } from "$lib/util";
+	import MeetupGallery from "./MeetupGallery.svelte";
 
 	export let dateISO: string;
 	export let name: string;
 	export let lumaLink: string;
 	export let by: TMeetupBy;
 	export let talks: TTalk[];
-	export let isPast: boolean;
+	export let isPast= false;
 	export let isDetail = false;
-
+    export let pictureCount = 0;
 	
 	const months = [
 		'Jan.',
@@ -34,7 +35,7 @@
 </script>
 
 <li data-day={new Date(dateISO).getDate()} data-month={getMonth(dateISO)}>
-	<section>
+	<section class:isPast>
 		<header>
 			<a href={lumaLink} target="_blank" rel="noopener noreferrer"><h3>{name}</h3></a>
 			<p class="meetupInfo">
@@ -42,7 +43,7 @@
 			</p>
 		</header>
 		{#if isDetail}
-			TODO: gallery
+			<MeetupGallery {dateISO} {pictureCount} />
 		{/if}
 		{#each talks as { githubAuthor, name, youtubeReplayLink }}
 			<Talk {githubAuthor} {name} {youtubeReplayLink} />
@@ -131,6 +132,9 @@
 		display: flex;
 		flex-direction: column;
 	}
+	section.isPast {
+		margin-bottom: 5rem;
+	}
 	header {
 		margin-bottom: 0.5rem;
 	}
@@ -142,6 +146,8 @@
 		text-align: right;
 	}
 	.details {
+		position: absolute;
+		bottom: 2rem;
 		align-self: flex-end;
 		border-radius: 1rem;
 		padding: .5rem 1rem;

@@ -16,20 +16,14 @@
 			: (futureMeetups = [...futureMeetups, m]);
 	});
 </script>
-<section>
-	<h1>Planned Meetups</h1>
-	<MeetupCollection meetups={futureMeetups} />
-	
-	<h2>Passed Meetups</h2>
-	<MeetupCollection meetups={pastMeetups} isPast />
-</section>
+
+<h1>Planned Meetups</h1>
+<MeetupCollection meetups={futureMeetups} />
+
+<h2>Passed Meetups</h2>
+<MeetupCollection meetups={pastMeetups} isPast />
 
 <style>
-	section {
-		max-width: 1680px;
-		margin: 0 auto;
-		padding: .8rem;
-	}
 	h1, h2 {
 		margin-bottom: 1rem;
 	}

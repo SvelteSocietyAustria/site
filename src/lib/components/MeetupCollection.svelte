@@ -19,13 +19,13 @@
 
 <style>
 	ul {
-		/* TODO: grid here */
 		list-style: none;
 		display: grid;
-		gap: 2rem;
 		margin: 2rem 0;
 		--columns: 1;
-		grid-template-columns: repeat(var(--columns), calc(100% / var(--columns) - 1rem * (var(--columns) - 1)));
+		--gap: 2rem;
+		gap: var(--gap);
+		grid-template-columns: repeat(var(--columns), calc(100% / var(--columns) - var(--gap) / 2 * (var(--columns) - 1)));
 	}
 	
 	@media screen and (min-width: 800px) {

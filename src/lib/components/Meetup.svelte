@@ -34,7 +34,10 @@
 	}
 </script>
 
-<li data-day={new Date(dateISO).getDate()} data-month={getMonth(dateISO)}>
+<li
+	class:isDetail
+	data-day={new Date(dateISO).getDate()}
+	data-month={getMonth(dateISO)}>
 	<section class:isPast>
 		<header>
 			<a href={lumaLink} target="_blank" rel="noopener noreferrer"><h3>{name}</h3></a>
@@ -46,10 +49,7 @@
 			<MeetupGallery {dateISO} {pictureCount} />
 		{/if}
 		{#each talks as { githubAuthor, name, youtubeReplayLink }}
-			<Talk {githubAuthor} {name} {youtubeReplayLink} />
-			{#if isDetail}
-				Youtube here...
-			{/if}
+			<Talk {githubAuthor} {name} {youtubeReplayLink} {isDetail} />
 		{:else}
 			<div class="talk">
 				<i> No talks to announce yet. </i>
@@ -59,11 +59,19 @@
 			<a class="details" href="/meetups/{meetupToSlug(name)}">Details</a>
 		{/if}
 	</section>
-	<div class="background" class:isDetail></div>
-	<div class="background-glow" class:isDetail></div>
+	<div class="background"></div>
+	<div class="background-glow"></div>
+	{#if isDetail}
+		<div class="back">
+			<a href="/meetups">←&nbsp;&nbsp;back</a>
+		</div>
+	{/if}
 </li>
 
 <style>
+	.isDetail {
+		display: block;
+	}
 	li {
 		position: relative;
 		display: flex;
@@ -106,7 +114,7 @@
 		margin: .25rem;
 		transition: all .3s;
 	}
-	.background.isDetail, .background-glow.isDetail {
+	.isDetail .background, .isDetail .background-glow {
 		display: none;
 	}
 	.background {
@@ -152,6 +160,10 @@
 		border-radius: 1rem;
 		padding: .5rem 1rem;
 		background: #fff;
+	}
+	.back {
+		text-align: right;
+		margin-right: 2rem;
 	}
 </style>
 

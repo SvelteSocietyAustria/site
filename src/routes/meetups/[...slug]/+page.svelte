@@ -13,8 +13,13 @@
         talks,
      } = data as TMeetup)
 </script>
-
-<Meetup {dateISO} {name} {lumaLink} {by} {talks} {pictureCount} isDetail/>
+<ul>
+    <Meetup {dateISO} {name} {lumaLink} {by} {talks} {pictureCount} isDetail />
+</ul>
 
 <style>
+    ul {
+		list-style: none;
+		margin: 2rem 0;
+	}
 </style>

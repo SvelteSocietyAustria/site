@@ -1,16 +1,39 @@
 <script lang="ts">
+	import { browser } from '$app/environment';
+	import { goto } from '$app/navigation';
 	import { page } from '$app/stores';
 	import GitHubAvatar from '$lib/components/GitHubAvatar.svelte';
 	import html2canvas from 'html2canvas';
 
+	let githubAuthor = $page.url.searchParams.get('who') || '';
 	let title = $page.url.searchParams.get('title') || 'Your awesome title, it will be great 🎉!';
-	let githubAuthor = $page.url.searchParams.get('who') || 'jycouet';
-	let name = '';
+	let name = $page.url.searchParams.get('name') || '';
+
+	$: browser && (githubAuthor || name || title) && updateQS();
+
+	function updateQS() {
+		if (githubAuthor) {
+			$page.url.searchParams.set('who', githubAuthor);
+		} else {
+			$page.url.searchParams.delete('who');
+		}
+		$page.url.searchParams.set('who', githubAuthor);
+		if (title) {
+			$page.url.searchParams.set('title', title);
+		} else {
+			$page.url.searchParams.delete('title');
+		}
+		if (name) {
+			$page.url.searchParams.set('name', name);
+		} else {
+			$page.url.searchParams.delete('name');
+		}
+		goto($page.url.href, { replaceState: true, keepfocus: true });
+	}
 
 	async function download() {
 		const el = document.querySelector('#tumb');
 		if (!el) return;
-
 		const canvas = await html2canvas(el as HTMLElement);
 		canvas.style.display = 'none';
 		document.body.appendChild(canvas);
@@ -20,6 +43,18 @@
 		a.setAttribute('href', image);
 		a.click();
 	}
+
+	export const replaceStateWithQuery = (values: Record<string, string>) => {
+		const url = new URL(window.location.toString());
+		for (let [k, v] of Object.entries(values)) {
+			if (!!v) {
+				url.searchParams.set(encodeURIComponent(k), encodeURIComponent(v));
+			} else {
+				url.searchParams.delete(k);
+			}
+		}
+		history.replaceState({}, '', url);
+	};
 </script>
 
 <h1>How YOUR thumbnail will look like on Youtube?</h1>
@@ -66,16 +101,14 @@
 		<GitHubAvatar size={300} {githubAuthor} asObjectUrl />
 	</div>
 	<div class="gh-name">
-		{name || githubAuthor}
+		{name || githubAuthor || '*'}
 	</div>
 	<div class="title">
 		{title}
 	</div>
 </div>
 <br />
-<button style="height: 3rem; width: 10rem;" on:click={download}>Download</button>*
-<br />
-*<i>Side note: For your picture to be downloaded you need to have it locally.</i>
+<button style="height: 3rem; width: 10rem;" on:click={download}>Download</button>
 
 <style>
 	.frame {

@@ -1,5 +1,5 @@
 export type TMeetup = {
-	dateISO: string;
+	dateISO: TDateISO;
 	name: string;
 	lumaLink: string;
 	by: TMeetupBy;

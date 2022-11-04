@@ -40,6 +40,7 @@
 		"node": "17.9.0"
 	},
 	"dependencies": {
+		"@svackages/click-outside-action": "^1.0.3",
 		"html2canvas": "^1.4.1"
 	}
 }

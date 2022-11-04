@@ -1,6 +1,7 @@
 import { promise as glob } from "glob-promise";
 import sharp from "sharp";
 import fs from 'fs/promises'
+import { format } from "path";
 
 ////
 // helpers
@@ -12,13 +13,17 @@ const SIZES = [
     1280,
     1920,
 ];
+const FORMATS = [
+    'jpg',
+    'webp',
+];
 
 const getOutputPath = (originalPath) => {
     const path = originalPath.split('gallery/')[1];
     return `./static/generated/${path}`;
 }
 
-const getImageDerivitePath = (originalPath, width) => getOutputPath(originalPath.replace(/(\d\d).jpg/, '$1' + `-${width}.jpg`));
+const getImageDerivitePath = (originalPath, width, format) => getOutputPath(originalPath.replace(/(\d\d).jpg/, '$1' + `-${width}.${format}`));
 
 await fs.rm('./static/generated', { recursive: true, force: true })
 
@@ -35,12 +40,14 @@ await Promise.all(
 await Promise.all(
     files.map((image) =>
         SIZES.map((size) =>
-            sharp(image)
-                .resize(size)
-                .toFile(getImageDerivitePath(image, size))
+            FORMATS.map(format =>
+                sharp(image)
+                    .resize(size)
+                    .toFile(getImageDerivitePath(image, size, format))
+            )
         )
-    ).flat()
+    ).flat(Infinity)
 )
 
 console.info('\x1b[36m')
-console.info(`> ${files.length * SIZES.length} images created`, '\x1b[0m')
+console.info(`> ${files.length * SIZES.length * FORMATS.length} images created`, '\x1b[0m')

@@ -2,10 +2,10 @@
 	import type { TTalk, TMeetupBy } from "$lib/components/TSvienna";
 	import By from "$lib/components/By.svelte";
 	import Talk from "$lib/components/Talk.svelte";
-	import { meetupToSlug } from "$lib/util";
+	import { getMonth, meetupToSlug } from "$lib/util";
 	import MeetupGallery from "./MeetupGallery.svelte";
 
-	export let dateISO: string;
+	export let dateISO: TDateISO;
 	export let name: string;
 	export let lumaLink: string;
 	export let by: TMeetupBy;
@@ -14,24 +14,6 @@
 	export let isDetail = false;
     export let pictureCount = 0;
 	
-	const months = [
-		'Jan.',
-		'Feb.',
-		'March',
-		'April',
-		'May',
-		'June',
-		'July',
-		'Aug.',
-		'Sept.',
-		'Oct.',
-		'Nov.',
-		'Dec.'
-	];
-	const getMonth = (dateISO: string) => {
-		const d = new Date(dateISO);
-		return months[d.getMonth()];
-	}
 </script>
 
 <li

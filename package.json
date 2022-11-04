@@ -2,7 +2,9 @@
 	"name": "site",
 	"version": "0.2.0",
 	"scripts": {
+		"predev": "npm run generateImages",
 		"dev": "vite dev",
+		"prebuild": "npm run generateImages",
 		"build": "vite build",
 		"preview": "vite preview",
 		"test": "playwright test",

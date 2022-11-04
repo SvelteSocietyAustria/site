@@ -15,12 +15,12 @@ const SIZES = [
 
 const getOutputPath = (originalPath) => {
     const path = originalPath.split('gallery/')[1];
-    return `./src/lib/generated/${path}`;
+    return `./static/generated/${path}`;
 }
 
 const getImageDerivitePath = (originalPath, width) => getOutputPath(originalPath.replace(/(\d\d).jpg/, '$1' + `-${width}.jpg`));
 
-await fs.rm('./src/lib/generated', { recursive: true, force: true })
+await fs.rm('./static/generated', { recursive: true, force: true })
 
 ////
 // img transformation
@@ -32,10 +32,15 @@ await Promise.all(
     folders.map((folder) => fs.mkdir(getOutputPath(folder), { recursive: true }))
 )
 
-files.forEach((image) => {
-    SIZES.forEach((size) => {
-        sharp(image)
-            .resize(size)
-            .toFile(getImageDerivitePath(image, size))
-    })
-})
+await Promise.all(
+    files.map((image) =>
+        SIZES.map((size) =>
+            sharp(image)
+                .resize(size)
+                .toFile(getImageDerivitePath(image, size))
+        )
+    ).flat()
+)
+
+console.info('\x1b[36m')
+console.info(`> ${files.length * SIZES.length} images created`, '\x1b[0m')

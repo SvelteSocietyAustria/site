@@ -1,5 +1,5 @@
 <script type="ts">
-	import { goto } from '$app/navigation';
+	import { afterNavigate, goto } from '$app/navigation';
 	import { page } from '$app/stores';
 	import { getGeneratedImageBaseUrl, getIndexString } from '$lib/util';
 	import { fade } from 'svelte/transition';
@@ -9,15 +9,22 @@
 	export let month: string;
 	export let picture: string;
 	export let pictureCount: number;
-	
+
 	const dispatch = createEventDispatcher();
 
 	const close = () => {
 		if (backUrl) goto(backUrl);
-		dispatch('close')
+		dispatch('close');
 	};
 	$: backUrl = $page.url.pathname.split('/gallery')[0];
 	$: pictureInt = parseInt(picture);
+	$: isFirst = pictureInt === 1;
+	$: isLast = pictureInt === pictureCount;
+	$: prevImageUrl = `${backUrl}/gallery/${getIndexString(pictureInt - 1)}`
+	$: nextImageUrl = `${backUrl}/gallery/${getIndexString(pictureInt + 1)}`
+
+	const back = () => !isFirst && goto(prevImageUrl);
+	const forward = () => !isLast && goto(nextImageUrl);
 
 	const SIZES = [640, 1024, 1280, 1920];
 
@@ -30,12 +37,19 @@
 		setFocusFirst();
 	});
 
+	afterNavigate(() => {
+		setFocusFirst();
+	})
+
 	onDestroy(() => {
-		dispatch('close')
+		dispatch('close');
 	});
 
 	const handleKeydown = (event: KeyboardEvent) => {
 		if (event.key === 'Escape') return close();
+		const altPressed = event.altKey;
+		if (event.key === 'ArrowLeft' && !altPressed) return back();
+		if (event.key === 'ArrowRight' && !altPressed) return forward();
 		if (event.key !== 'Tab') return;
 		const first = getFirstElement();
 		const last = [...container.querySelectorAll('a')].pop();
@@ -49,18 +63,29 @@
 <svelte:window on:keydown={handleKeydown} />
 
 <div class="wrapper" transition:fade>
-	<div class="container" use:clickOutside={() => close()} bind:this={container}>
+	<div
+		class="container"
+		use:clickOutside={() => close()}
+		bind:this={container}
+		role="dialog"
+		aria-labelledby="gallery_label"
+		aria-modal="true"
+	>
+		<h2 id="gallery_label" class="sr-only">
+			A detail view of the gallery images.
+			Use arrow keys to navigate to the previous or next image.
+		</h2>
 		<menu>
 			<svelte:element
-				this={pictureInt === 1 ? 'div' : 'a'}
-				href={`${backUrl}/gallery/${getIndexString(pictureInt - 1)}`}
+				this={isFirst ? 'div' : 'a'}
+				href={prevImageUrl}
 			>
 				<span class="chevron -left" />
 				previous
 			</svelte:element>
 			<svelte:element
-				this={pictureInt === pictureCount ? 'div' : 'a'}
-				href={`${backUrl}/gallery/${getIndexString(pictureInt + 1)}`}
+				this={isLast ? 'div' : 'a'}
+				href={nextImageUrl}
 			>
 				next
 				<span class="chevron -right" />

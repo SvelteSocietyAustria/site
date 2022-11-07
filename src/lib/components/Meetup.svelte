@@ -22,8 +22,9 @@
 	data-month={getMonth(dateISO)}>
 	<section class:isPast>
 		<header>
-			<a href={lumaLink} target="_blank" rel="noopener noreferrer"><h3>{name}</h3></a>
+			<h3>{name}</h3>
 			<p class="meetupInfo">
+				<a href={lumaLink} target="_blank" rel="noopener noreferrer">📅 Event Page</a>
 				<By {by} />
 			</p>
 		</header>
@@ -133,7 +134,9 @@
 		font-size: 1.3rem;
 	}
 	.meetupInfo {
-		text-align: right;
+		display: flex;
+		justify-content: space-between;
+		margin-left: 8px;
 	}
 	.details {
 		position: absolute;

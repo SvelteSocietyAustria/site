@@ -1,6 +1,6 @@
 <script lang="ts">
 	import type { TMeetup } from '$lib/components/TSvienna';
-	import TalkList from '$lib/components/TalkList.svelte';
+	import MeetupCollection from '$lib/components/MeetupCollection.svelte';
 	import type { PageData } from './$types';
 
 	export let data: PageData;
@@ -18,12 +18,15 @@
 </script>
 
 <h1>Planned Meetups</h1>
-<TalkList meetups={futureMeetups} />
+<MeetupCollection meetups={futureMeetups} />
 
 <h2>Passed Meetups</h2>
-<TalkList meetups={pastMeetups} />
+<MeetupCollection meetups={pastMeetups} isPast />
 
 <style>
+	h1, h2 {
+		margin-bottom: 1rem;
+	}
 	h2 {
 		margin-top: 2rem;
 	}

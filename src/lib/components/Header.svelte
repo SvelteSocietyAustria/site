@@ -31,7 +31,11 @@
 	</div>
 	<nav>
 		{#each routes as { name, href }}
-			<a {href} aria-current={href === $page.url.pathname ? 'page' : undefined}>{name}</a>
+			<a {href} aria-current={(href.length > 1
+				? $page.url.pathname.startsWith(href)
+				: href === $page.url.pathname)
+			? 'page'
+			: undefined}>{name}</a>
 		{/each}
 	</nav>
 </header>

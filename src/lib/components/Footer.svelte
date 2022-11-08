@@ -36,6 +36,7 @@
 		flex-wrap: wrap;
 		justify-content: center;
 		align-items: center;
+		z-index: 5;
 	}
 	footer * + *::before {
 		content: '⁝';

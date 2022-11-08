@@ -3,8 +3,10 @@
 	export let by: TMeetupBy = 'svienna';
 </script>
 
-{#if by === 'svienna'}
-	<i>by</i>&nbsp;&nbsp;<a href="/chapters#svienna">Svienna</a>
-{:else}
-	<i>by</i> ???
-{/if}
+<span>
+	{#if by === 'svienna'}
+		<i>by</i>&nbsp;&nbsp;<a href="/chapters#svienna">Svienna</a>
+	{:else}
+		<i>by</i> ???
+	{/if}
+</span>

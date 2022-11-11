@@ -1,6 +1,6 @@
 {
 	"name": "site",
-	"version": "0.2.0",
+	"version": "0.3.0",
 	"scripts": {
 		"predev": "npm run generateImages",
 		"dev": "vite dev",
@@ -16,6 +16,7 @@
 	},
 	"devDependencies": {
 		"@playwright/test": "^1.25.1",
+		"@squoosh/lib": "^0.4.0",
 		"@sveltejs/adapter-auto": "1.0.0-next.84",
 		"@sveltejs/kit": "1.0.0-next.525",
 		"@typescript-eslint/eslint-plugin": "^5.36.1",
@@ -27,7 +28,6 @@
 		"glob-promise": "^5.0.0",
 		"prettier": "^2.7.1",
 		"prettier-plugin-svelte": "^2.7.0",
-		"sharp": "^0.31.1",
 		"svelte": "^3.50.0",
 		"svelte-check": "^2.9.0",
 		"svelte-preprocess": "^4.10.7",
@@ -37,7 +37,10 @@
 	},
 	"type": "module",
 	"volta": {
-		"node": "17.9.0"
+		"node": "16.18.1"
+	},
+	"engines": {
+		"node": "16.18.1"
 	},
 	"dependencies": {
 		"@svackages/click-outside-action": "^1.0.3",

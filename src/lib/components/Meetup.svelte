@@ -1,25 +1,21 @@
 <script type="ts">
-	import type { TTalk, TMeetupBy } from "$lib/components/TSvienna";
-	import By from "$lib/components/By.svelte";
-	import Talk from "$lib/components/Talk.svelte";
-	import { getMonth, meetupToSlug } from "$lib/util";
-	import MeetupGallery from "./MeetupGallery.svelte";
+	import type { TTalk, TMeetupBy } from '$lib/components/TSvienna';
+	import By from '$lib/components/By.svelte';
+	import Talk from '$lib/components/Talk.svelte';
+	import { getMonth, meetupToSlug } from '$lib/util';
+	import MeetupGallery from './MeetupGallery.svelte';
 
 	export let dateISO: TDateISO;
 	export let name: string;
 	export let lumaLink: string;
 	export let by: TMeetupBy;
 	export let talks: TTalk[];
-	export let isPast= false;
+	export let isPast = false;
 	export let isDetail = false;
-    export let pictureCount = 0;
-	
+	export let pictureCount = 0;
 </script>
 
-<li
-	class:isDetail
-	data-day={new Date(dateISO).getDate()}
-	data-month={getMonth(dateISO)}>
+<li class:isDetail data-day={new Date(dateISO).getDate()} data-month={getMonth(dateISO)}>
 	<section class:isPast>
 		<header>
 			<h3>{name}</h3>
@@ -42,8 +38,8 @@
 			<a class="details" href="/meetups/{meetupToSlug(name)}">Details</a>
 		{/if}
 	</section>
-	<div class="background"></div>
-	<div class="background-glow"></div>
+	<div class="background" />
+	<div class="background-glow" />
 	{#if isDetail}
 		<div class="back">
 			<a href="/meetups">←&nbsp;&nbsp;back</a>
@@ -64,7 +60,7 @@
 	li::before,
 	li::after {
 		position: absolute;
-		left: -.8rem;
+		left: -0.8rem;
 		width: 3.5rem;
 		display: flex;
 		align-items: center;
@@ -73,7 +69,7 @@
 	}
 	li::before {
 		content: attr(data-day);
-		top: -.8rem;
+		top: -0.8rem;
 		background-color: var(--color-white);
 		color: var(--color-black);
 		height: 2.3rem;
@@ -86,18 +82,20 @@
 		height: 2rem;
 		font-size: 1rem;
 	}
-	.background, .background-glow {
+	.background,
+	.background-glow {
 		position: absolute;
-		top:0;
+		top: 0;
 		bottom: 0;
 		left: 0;
 		right: 0;
 		border-top-right-radius: 3rem;
 		border-bottom-left-radius: 3rem;
-		margin: .25rem;
-		transition: all .3s;
+		margin: 0.25rem;
+		transition: all 0.3s;
 	}
-	.isDetail .background, .isDetail .background-glow {
+	.isDetail .background,
+	.isDetail .background-glow {
 		display: none;
 	}
 	.background {
@@ -106,15 +104,15 @@
 	}
 	.background-glow {
 		background-color: #fff;
-		scale: .95;
+		scale: 0.95;
 		box-shadow: 0px 0px 15px 12px #fff7;
 		z-index: 1;
 	}
 	li:hover .background {
-		opacity: .92;
+		opacity: 0.92;
 	}
 	li:hover .background-glow {
-		scale: .99;
+		scale: 0.99;
 	}
 	section {
 		z-index: 3;
@@ -130,7 +128,7 @@
 		margin-bottom: 0.5rem;
 	}
 	h3 {
-		margin: 2rem 0 .2rem 2rem;
+		margin: 2rem 0 0.2rem 2rem;
 		font-size: 1.3rem;
 	}
 	.meetupInfo {
@@ -143,7 +141,7 @@
 		bottom: 2rem;
 		align-self: flex-end;
 		border-radius: 1rem;
-		padding: .5rem 1rem;
+		padding: 0.5rem 1rem;
 		background: #fff;
 	}
 	.back {
@@ -151,4 +149,3 @@
 		margin-right: 2rem;
 	}
 </style>
-

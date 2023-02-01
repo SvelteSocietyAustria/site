@@ -27,7 +27,7 @@
 <header>
 	<div class="flex items-center">
 		<img src="/logos/Logo-Svelte.svg" alt="Svelte Society Austria Logo" />
-		<div class="logoFont"><span class="sr-only">S</span>velte Socitey Austria</div>
+		<div class="logoFont"><span class="sr-only">S</span>velte Society Austria</div>
 	</div>
 	<nav>
 		{#each routes as { name, href }}

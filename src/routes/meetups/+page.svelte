@@ -17,7 +17,7 @@
 	});
 </script>
 
-<h1>Planned Meetups</h1>
+<h1>Upcomming Meetups</h1>
 <MeetupCollection meetups={futureMeetups} />
 
 <h2>Passed Meetups</h2>

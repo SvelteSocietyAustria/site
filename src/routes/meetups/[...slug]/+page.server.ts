@@ -1,7 +1,7 @@
 import type { TMeetup } from '$lib/components/TSvienna';
 import { meetupToSlug } from '$lib/util';
 import { redirect } from '@sveltejs/kit';
-import { meetups } from '../meetups';
+import { meetups } from '../../meetups';
 import type { PageServerLoad } from './$types';
 
 export const load: PageServerLoad<TMeetup | undefined> = async ({ params }) => {

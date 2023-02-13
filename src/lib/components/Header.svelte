@@ -14,8 +14,8 @@
 	});
 
 	const routes: { name: string; href: string }[] = [
-		{ name: 'Home', href: '/' },
-		{ name: 'Meetups', href: '/meetups' },
+		{ name: 'Meetups', href: '/' },
+		{ name: 'About', href: '/about' },
 		{ name: 'Chapters', href: '/chapters' }
 	];
 </script>

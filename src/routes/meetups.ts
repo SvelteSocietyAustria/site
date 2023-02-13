@@ -8,8 +8,8 @@ export const meetups: TMeetup[] = [
 		pictureCount: 0,
 		talks: [
 			{
-				name: 'Your awesome title 🥳',
-				githubAuthor: ''
+				name: 'How Sentry helps you build your Svelte / SvelteKit application',
+				githubAuthor: 'getsentry'
 			},
 			{
 				name: "An 'exceptionally' talk!",

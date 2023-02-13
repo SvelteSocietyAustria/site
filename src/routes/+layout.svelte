@@ -46,7 +46,9 @@
 
 <style>
 	main {
-		padding: 1rem;
+		padding: 2rem;
 		margin-bottom: 3.5rem;
+		max-width: 800px;
+		margin: 2rem auto;
 	}
 </style>

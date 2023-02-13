@@ -12,8 +12,8 @@ export const load: PageLoad = () => {
 			githubAuthor: 'dreitzner'
 		},
 		{
-			displayName: 'Ermin Čeliković',
-			twitter: 'https://mobile.twitter.com/celikovic',
+			displayName: 'Ermin Celikovic',
+			twitter: 'https://twitter.com/celikovic',
 			githubAuthor: 'ermincelikovic'
 		},
 		{

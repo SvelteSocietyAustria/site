@@ -16,8 +16,8 @@ export const meetups: TMeetup[] = [
 				githubAuthor: 'ivanhofer'
 			},
 			{
-				name: 'it will be great 🎉',
-				githubAuthor: ''
+				name: 'Let\'s have a <dialog>',
+				githubAuthor: 'Dreitzner'
 			}
 		]
 	},

@@ -28,7 +28,7 @@
 		} else {
 			$page.url.searchParams.delete('name');
 		}
-		goto($page.url.href, { replaceState: true, keepfocus: true });
+		goto($page.url.href, { replaceState: true, keepFocus: true });
 	}
 
 	async function download() {

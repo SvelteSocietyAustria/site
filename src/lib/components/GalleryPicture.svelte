@@ -1,4 +1,4 @@
-<script type="ts">
+<script lang="ts">
 	import { afterNavigate, goto } from '$app/navigation';
 	import { page } from '$app/stores';
 	import { getGeneratedImageBaseUrl, getIndexString } from '$lib/util';

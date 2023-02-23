@@ -1,4 +1,4 @@
-<script type="ts">
+<script lang="ts">
 	import GitHubAvatar from "$lib/components/GitHubAvatar.svelte";
 	import YouTube from "$lib/icons/YouTube.svelte";
 

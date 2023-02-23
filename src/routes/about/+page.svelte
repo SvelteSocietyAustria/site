@@ -18,8 +18,8 @@
 				<div class="ml-4">
 					<h3>{displayName}</h3>
 					<p>
-						<a href={twitter} target="_blanck" rel="noopener noreferrer">twitter</a> /
-						<a href="https://github.com/{githubAuthor}" target="_blanck" rel="noopener noreferrer"
+						<a href={twitter} target="_blank" rel="noopener noreferrer">twitter</a> /
+						<a href="https://github.com/{githubAuthor}" target="_blank" rel="noopener noreferrer"
 							>github</a
 						>
 					</p>
@@ -33,7 +33,7 @@
 	<h2>Sponsors</h2>
 	<div class="flex -list">
 		{#each data.sponsors as { name, website, logo }}
-			<a class="flex" href={website} rel="noopener" target="_blank">
+			<a class="flex" href={website} rel="noopener noreferrer" target="_blank">
 				<img src={logo} alt="{name} Logo" />
 				{name}
 			</a>

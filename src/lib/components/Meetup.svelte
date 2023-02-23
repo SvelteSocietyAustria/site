@@ -1,4 +1,4 @@
-<script type="ts">
+<script lang="ts">
 	import type { TTalk, TMeetupBy } from '$lib/components/TSvienna';
 	import By from '$lib/components/By.svelte';
 	import Talk from '$lib/components/Talk.svelte';

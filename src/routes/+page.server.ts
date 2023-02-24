@@ -4,6 +4,6 @@ import { meetups } from './meetups';
 
 export const load: PageServerLoad<{ meetups: TMeetup[] }> = () => {
 	return {
-		meetups
+		meetups,
 	};
 };

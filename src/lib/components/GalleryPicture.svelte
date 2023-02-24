@@ -94,12 +94,12 @@
 		</menu>
 		<picture>
 			{#each SIZES as size}
-				{@const src = getGeneratedImageBaseUrl(month, picture, size)}
-				<source srcset="{src}.webp" media="(max-width={size}px)" type="image/webp" />
-				<source srcset="{src}.jpg" media="(max-width={size}px)" type="image/jpg" />
+				{@const src = getGeneratedImageBaseUrl($page.data.baseUrl, month, picture, size)}
+				<source srcset="{src}&output=webp" media="(max-width={size}px)" type="image/webp" />
+				<source srcset="{src}" media="(max-width={size}px)" type="image/jpg" />
 			{/each}
 			<img
-				src="{getGeneratedImageBaseUrl(month, picture, 1920)}.jpg"
+				src="{getGeneratedImageBaseUrl($page.data.baseUrl, month, picture, 1920)}"
 				alt="Detail image {pictureInt} from meetup {month}"
 			/>
 		</picture>

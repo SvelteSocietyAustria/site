@@ -24,11 +24,11 @@
     <section class="gallery">
         {#each new Array(pictureCount) as _, index}
         {@const number = getIndexString(index+1)}
-        {@const src = getGeneratedImageBaseUrl(month, number, 150)}
+        {@const src = getGeneratedImageBaseUrl($page.data.baseUrl, month, number, 150)}
             <a href="{$page.url.pathname}/gallery/{number}" on:click={remember}>
                 <picture>
-                    <source srcset="{src}.webp" type="image/webp">
-                    <img src="{src}.jpg" alt="Gallery image {index} from meetup {month}" />
+                    <source srcset="{src}&output=webp" type="image/webp">
+                    <img src="{src}" alt="Gallery image {index} from meetup {month}" />
                 </picture>
             </a>
         {/each}

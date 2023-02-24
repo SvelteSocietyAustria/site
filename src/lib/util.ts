@@ -22,6 +22,4 @@ export const getMonth = (dateISO: string) => {
 
 export const getIndexString = (index: number) => index < 10 ? `0${index}` : '' + index;
 
-const deployUrl = import.meta.env.CF_PAGES_URL || import.meta.env.VERCEL_URL || 'austria.sveltesociety.dev';
-
-export const getGeneratedImageBaseUrl = (month: string, index: string, size: number) => `//wsrv.nl/?url=${deployUrl}/images/gallery/${month}/${index}.jpg&w=${size}&h=${size}`
+export const getGeneratedImageBaseUrl = (deployUrl: string, month: string, index: string, size: number) => `//wsrv.nl/?url=${deployUrl}/images/gallery/${month}/${index}.jpg&w=${size}&h=${size}`

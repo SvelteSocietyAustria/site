@@ -18,16 +18,17 @@
 </script>
 
 <h2>Upcomming Meetups</h2>
-<MeetupCollection meetups={futureMeetups} />
+<MeetupCollection deployUrl={data.deployUrl} meetups={futureMeetups} />
 
 <h2>Passed Meetups</h2>
-<MeetupCollection meetups={pastMeetups} isPast />
+<MeetupCollection deployUrl={data.deployUrl} meetups={pastMeetups} isPast />
 
 <style>
-	h1, h2 {
+	h1,
+	h2 {
 		margin-bottom: 1rem;
 	}
-	
+
 	h2 {
 		margin-top: 2rem;
 	}

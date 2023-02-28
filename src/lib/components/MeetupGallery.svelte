@@ -5,6 +5,7 @@
 
     export let dateISO: TDateISO;
     export let pictureCount = 0;
+    export let deployUrl: string;
 
     const month = dateISO.split('T')[0] as string;
     let picture: string | undefined;
@@ -24,17 +25,17 @@
     <section class="gallery">
         {#each new Array(pictureCount) as _, index}
         {@const number = getIndexString(index+1)}
-        {@const src = getGeneratedImageBaseUrl(month, number, 150)}
+        {@const src = getGeneratedImageBaseUrl(deployUrl, month, number, 150)}
             <a href="{$page.url.pathname}/gallery/{number}" on:click={remember}>
                 <picture>
-                    <source srcset="{src}.webp" type="image/webp">
-                    <img src="{src}.jpg" alt="Gallery image {index} from meetup {month}" />
+                    <source srcset="{src}&output=webp" type="image/webp">
+                    <img src="{src}" alt="Gallery image {index} from meetup {month}" />
                 </picture>
             </a>
         {/each}
     </section>
     {#if picture}
-        <GalleryPicture {month} {picture} {pictureCount} on:close={restoreFocus} />
+        <GalleryPicture {deployUrl} {month} {picture} {pictureCount} on:close={restoreFocus} />
     {/if}
 {/if}
 

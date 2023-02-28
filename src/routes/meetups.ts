@@ -5,7 +5,7 @@ export const meetups: TMeetup[] = [
 		name: '2023/02 Svienna - Svelte Society Vienna',
 		lumaLink: 'https://lu.ma/2023-02-Svienna',
 		by: 'svienna',
-		pictureCount: 0,
+		pictureCount: 8,
 		talks: [
 			{
 				name: 'How Sentry helps you build your Svelte / SvelteKit application',

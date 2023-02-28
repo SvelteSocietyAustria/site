@@ -4,13 +4,14 @@
 	import Meetup from './Meetup.svelte';
 
 	export let meetups: TMeetup[];
+	export let deployUrl: string;
 	export let isPast = false;
 </script>
 
 {#if meetups.length}
 	<ul class:single={meetups.length == 1}>
 		{#each meetups as { dateISO, name, lumaLink, by, talks }}
-			<Meetup {dateISO} {name} {lumaLink} {by} {talks} {isPast} />
+			<Meetup {dateISO} {name} {lumaLink} {by} {talks} {deployUrl} {isPast} />
 		{/each}
 	</ul>
 {:else}

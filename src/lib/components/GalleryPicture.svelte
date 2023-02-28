@@ -9,6 +9,7 @@
 	export let month: string;
 	export let picture: string;
 	export let pictureCount: number;
+	export let deployUrl: string;
 
 	const dispatch = createEventDispatcher();
 
@@ -94,12 +95,12 @@
 		</menu>
 		<picture>
 			{#each SIZES as size}
-				{@const src = getGeneratedImageBaseUrl(month, picture, size)}
-				<source srcset="{src}.webp" media="(max-width={size}px)" type="image/webp" />
-				<source srcset="{src}.jpg" media="(max-width={size}px)" type="image/jpg" />
+				{@const src = getGeneratedImageBaseUrl(deployUrl, month, picture, size)}
+				<source srcset="{src}&output=webp" media="(max-width={size}px)" type="image/webp" />
+				<source srcset="{src}" media="(max-width={size}px)" type="image/jpg" />
 			{/each}
 			<img
-				src="{getGeneratedImageBaseUrl(month, picture, 1920)}.jpg"
+				src="{getGeneratedImageBaseUrl(deployUrl, month, picture, 1920)}"
 				alt="Detail image {pictureInt} from meetup {month}"
 			/>
 		</picture>
@@ -134,6 +135,7 @@
 		display: inline-block;
 		height: 5px;
 		width: 5px;
+		border: 5px solid transparent;
 		border-top: 5px solid var(--color-red);
 		border-right: 5px solid var(--color-red);
 	}

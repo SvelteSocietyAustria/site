@@ -31,7 +31,7 @@
 	},
 	"type": "module",
 	"volta": {
-		"node": "16.19.1"
+		"node": "18.14.2"
 	},
 	"dependencies": {
 		"@svackages/click-outside-action": "^1.0.3",

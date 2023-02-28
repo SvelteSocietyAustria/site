@@ -5,6 +5,7 @@
 
     export let dateISO: TDateISO;
     export let pictureCount = 0;
+    export let deployUrl: string;
 
     const month = dateISO.split('T')[0] as string;
     let picture: string | undefined;
@@ -24,7 +25,7 @@
     <section class="gallery">
         {#each new Array(pictureCount) as _, index}
         {@const number = getIndexString(index+1)}
-        {@const src = getGeneratedImageBaseUrl($page.data.baseUrl, month, number, 150)}
+        {@const src = getGeneratedImageBaseUrl(deployUrl, month, number, 150)}
             <a href="{$page.url.pathname}/gallery/{number}" on:click={remember}>
                 <picture>
                     <source srcset="{src}&output=webp" type="image/webp">
@@ -34,7 +35,7 @@
         {/each}
     </section>
     {#if picture}
-        <GalleryPicture {month} {picture} {pictureCount} on:close={restoreFocus} />
+        <GalleryPicture {deployUrl} {month} {picture} {pictureCount} on:close={restoreFocus} />
     {/if}
 {/if}
 

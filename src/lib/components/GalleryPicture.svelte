@@ -135,6 +135,7 @@
 		display: inline-block;
 		height: 5px;
 		width: 5px;
+		border: 5px solid transparent;
 		border-top: 5px solid var(--color-red);
 		border-right: 5px solid var(--color-red);
 	}

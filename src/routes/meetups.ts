@@ -13,11 +13,13 @@ export const meetups: TMeetup[] = [
 			},
 			{
 				name: "An 'exceptionally' talk!",
-				githubAuthor: 'ivanhofer'
+				githubAuthor: 'ivanhofer',
+				youtubeReplayLink: 'https://youtu.be/zHQQ2IW3svo',
 			},
 			{
 				name: 'Let\'s have a <dialog>',
-				githubAuthor: 'Dreitzner'
+				githubAuthor: 'Dreitzner',
+				youtubeReplayLink: 'https://youtu.be/XkC29lskoM0',
 			}
 		]
 	},

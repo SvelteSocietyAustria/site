@@ -11,7 +11,7 @@ const config = {
 	kit: {
 		adapter: process.env.VERCEL_GIT_COMMIT_REF
 			? adapterVercel({
-				runtime: 'edge'
+				runtime: 'nodejs18.x'
 			})
 			: adapterCloudflare()
 	}

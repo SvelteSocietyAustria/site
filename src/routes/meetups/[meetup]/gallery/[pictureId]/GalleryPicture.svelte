@@ -6,10 +6,11 @@
 	import clickOutside from '@svackages/click-outside-action';
 	import { createEventDispatcher, onDestroy, onMount } from 'svelte';
 
-	export let month: string;
-	export let picture: string;
+	export let pictureId: string;
 	export let pictureCount: number;
 	export let deployUrl: string;
+	export let dateISO: TDateISO;
+    const month = dateISO.split('T')[0] as string;
 
 	const dispatch = createEventDispatcher();
 
@@ -18,7 +19,7 @@
 		dispatch('close');
 	};
 	$: backUrl = $page.url.pathname.split('/gallery')[0];
-	$: pictureInt = parseInt(picture);
+	$: pictureInt = parseInt(pictureId);
 	$: isFirst = pictureInt === 1;
 	$: isLast = pictureInt === pictureCount;
 	$: prevImageUrl = `${backUrl}/gallery/${getIndexString(pictureInt - 1)}`
@@ -63,6 +64,7 @@
 
 <svelte:window on:keydown={handleKeydown} />
 
+<!-- TODO: make dialog -->
 <div class="wrapper" transition:fade>
 	<div
 		class="container"
@@ -95,12 +97,12 @@
 		</menu>
 		<picture>
 			{#each SIZES as size}
-				{@const src = getGeneratedImageBaseUrl(deployUrl, month, picture, size)}
+				{@const src = getGeneratedImageBaseUrl(deployUrl, month, pictureId, size)}
 				<source srcset="{src}&output=webp" media="(max-width={size}px)" type="image/webp" />
 				<source srcset="{src}" media="(max-width={size}px)" type="image/jpg" />
 			{/each}
 			<img
-				src="{getGeneratedImageBaseUrl(deployUrl, month, picture, 1920)}"
+				src="{getGeneratedImageBaseUrl(deployUrl, month, pictureId, 1920)}"
 				alt="Detail image {pictureInt} from meetup {month}"
 			/>
 		</picture>

@@ -3,7 +3,6 @@
 	import By from '$lib/components/By.svelte';
 	import Talk from '$lib/components/Talk.svelte';
 	import { getMonth, meetupToSlug } from '$lib/util';
-	import MeetupGallery from './MeetupGallery.svelte';
 
 	export let dateISO: TDateISO;
 	export let name: string;
@@ -25,9 +24,7 @@
 				<By {by} />
 			</p>
 		</header>
-		{#if isDetail}
-			<MeetupGallery {deployUrl} {dateISO} {pictureCount} />
-		{/if}
+		<slot />
 		{#each talks as { githubAuthor, name, youtubeReplayLink }}
 			<Talk {githubAuthor} {name} {youtubeReplayLink} {isDetail} />
 		{:else}

@@ -1,8 +1,8 @@
 <script lang="ts">
 	import Meetup from '$lib/components/Meetup.svelte';
-	import type { PageData } from './$types';
+	import MeetupGallery from './MeetupGallery.svelte';
 
-	export let data: PageData;
+	export let data;
     $:( {
         dateISO,
         name,
@@ -14,8 +14,11 @@
      } = data)
 </script>
 <ul>
-    <Meetup {dateISO} {name} {lumaLink} {by} {talks} {pictureCount} {deployUrl} isDetail />
+    <Meetup {dateISO} {name} {lumaLink} {by} {talks} {pictureCount} {deployUrl}>
+        <MeetupGallery {dateISO} {deployUrl} {pictureCount} />
+    </Meetup>
 </ul>
+<slot />
 
 <style>
     ul {

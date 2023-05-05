@@ -13,25 +13,41 @@
 	export let isDetail = false;
 </script>
 
-<li class:isDetail data-day={new Date(dateISO).getDate()} data-month={getMonth(dateISO)}>
+<li
+	class:isDetail
+	data-day={new Date(dateISO).getDate()}
+	data-month={getMonth(dateISO)}
+>
 	<section class:isPast>
 		<header>
 			<h3>{name}</h3>
 			<p class="meetupInfo">
-				<a href={lumaLink} target="_blank" rel="noopener noreferrer">📅 Event Page</a>
+				<a
+					href={lumaLink}
+					target="_blank"
+					rel="noopener noreferrer">📅 Event Page</a
+				>
 				<By {by} />
 			</p>
 		</header>
 		<slot />
 		{#each talks as { githubAuthor, name, youtubeReplayLink }}
-			<Talk {githubAuthor} {name} {youtubeReplayLink} {isDetail} />
+			<Talk
+				{githubAuthor}
+				{name}
+				{youtubeReplayLink}
+				{isDetail}
+			/>
 		{:else}
 			<div class="talk">
 				<i> No talks to announce yet. </i>
 			</div>
 		{/each}
 		{#if isPast}
-			<a class="details" href="/meetups/{meetupToSlug(name)}">Details</a>
+			<a
+				class="details"
+				href="/meetups/{meetupToSlug(name)}">Details</a
+			>
 		{/if}
 	</section>
 	<div class="background" />

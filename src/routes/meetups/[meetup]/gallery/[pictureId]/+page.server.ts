@@ -1,5 +1,5 @@
-export const load = (({params: {pictureId}}) => {
-    return {
-        pictureId
-    };
-});
+export const load = ({ params: { pictureId } }) => {
+	return {
+		pictureId,
+	};
+};

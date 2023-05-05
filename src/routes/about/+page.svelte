@@ -14,13 +14,23 @@
 	{#each data.founders as { displayName, twitter, githubAuthor }}
 		<li>
 			<div class="founder">
-				<GitHubAvatar {githubAuthor} size={70} />
+				<GitHubAvatar
+					{githubAuthor}
+					size={70}
+				/>
 				<div class="ml-4">
 					<h3>{displayName}</h3>
 					<p>
-						<a href={twitter} target="_blank" rel="noopener noreferrer">twitter</a> /
-						<a href="https://github.com/{githubAuthor}" target="_blank" rel="noopener noreferrer"
-							>github</a
+						<a
+							href={twitter}
+							target="_blank"
+							rel="noopener noreferrer">twitter</a
+						>
+						/
+						<a
+							href="https://github.com/{githubAuthor}"
+							target="_blank"
+							rel="noopener noreferrer">github</a
 						>
 					</p>
 				</div>
@@ -33,12 +43,25 @@
 	<h2>Sponsors</h2>
 	<div class="flex -list">
 		{#each data.sponsors as { name, website, logo }}
-			<a class="flex" href={website} rel="noopener noreferrer" target="_blank">
-				<img src={logo} alt="{name} Logo" />
+			<a
+				class="flex"
+				href={website}
+				rel="noopener noreferrer"
+				target="_blank"
+			>
+				<img
+					src={logo}
+					alt="{name} Logo"
+				/>
 				{name}
 			</a>
 		{/each}
-		<a class="flex" href="mailto:reitznerdomenik+svelteaustria@gmail.com"> Contact us </a>
+		<a
+			class="flex"
+			href="mailto:reitznerdomenik+svelteaustria@gmail.com"
+		>
+			Contact us
+		</a>
 	</div>
 </section>
 

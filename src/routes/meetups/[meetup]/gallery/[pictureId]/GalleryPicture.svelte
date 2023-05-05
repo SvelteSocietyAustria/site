@@ -4,7 +4,7 @@
 	import { getGeneratedImageBaseUrl, getIndexString } from '$lib/util';
 	import { fade } from 'svelte/transition';
 	import clickOutside from '@svackages/click-outside-action';
-	import { onDestroy, onMount } from 'svelte';
+	import { onMount } from 'svelte';
 
 	export let pictureId: string;
 	export let pictureCount: number;
@@ -33,8 +33,6 @@
 	onMount(() => {
 		dialog.showModal();
 	});
-
-
 
 	const handleKeydown = (event: KeyboardEvent) => {
 		const altPressed = event.altKey;

@@ -21,7 +21,12 @@
 	><g
 		><g
 			><g
-				><use xlink:href="#b3CvijxfIS" opacity="1" {fill} fill-opacity="1" /><g
+				><use
+					xlink:href="#b3CvijxfIS"
+					opacity="1"
+					{fill}
+					fill-opacity="1"
+				/><g
 					><use
 						xlink:href="#b3CvijxfIS"
 						opacity="1"

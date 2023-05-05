@@ -7,16 +7,14 @@ import { meetups } from '../../meetups';
 export const config = {
 	isr: {
 		expiration: 3600,
-	}
-}
+	},
+};
 
-
-
-export async function load({params}) {
-    const item = meetups.find((m) => params.meetup === meetupToSlug(m.name));
-    if (!item) redirect(303, '/');
-    return {
-        ...item as TMeetup,
-        deployUrl,
-    };
+export async function load({ params }) {
+	const item = meetups.find((m) => params.meetup === meetupToSlug(m.name));
+	if (!item) redirect(303, '/');
+	return {
+		...(item as TMeetup),
+		deployUrl,
+	};
 }

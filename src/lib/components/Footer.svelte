@@ -17,11 +17,22 @@
 		rel="noopener noreferrer"
 	>
 		<span class="sr-only">Twitter Link</span>
-		<Twitter width={22} height={22} />
+		<Twitter
+			width={22}
+			height={22}
+		/>
 	</a>
-	<a class="icon" href="https://discord.gg/e4P4C6kJGr" target="_blank" rel="noopener noreferrer">
+	<a
+		class="icon"
+		href="https://discord.gg/e4P4C6kJGr"
+		target="_blank"
+		rel="noopener noreferrer"
+	>
 		<span class="sr-only">Discord Link</span>
-		<Discord width={22} height={22} />
+		<Discord
+			width={22}
+			height={22}
+		/>
 	</a>
 </footer>
 

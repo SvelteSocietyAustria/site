@@ -1,10 +1,10 @@
 // In TS, interfaces are "open" and can be extended
 interface Date {
-    /**
-     * Give a more precise return type to the method `toISOString()`:
-     * https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Date/toISOString
-     */
-    toISOString(): TDateISO;
+	/**
+	 * Give a more precise return type to the method `toISOString()`:
+	 * https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Date/toISOString
+	 */
+	toISOString(): TDateISO;
 }
 
 type TYear = `${number}${number}${number}${number}`;

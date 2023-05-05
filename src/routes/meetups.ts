@@ -9,7 +9,7 @@ export const meetups: TMeetup[] = [
 		talks: [
 			{
 				name: 'How Sentry helps you build your Svelte / SvelteKit application',
-				githubAuthor: 'getsentry'
+				githubAuthor: 'getsentry',
 			},
 			{
 				name: "An 'exceptionally' talk!",
@@ -17,11 +17,11 @@ export const meetups: TMeetup[] = [
 				youtubeReplayLink: 'https://youtu.be/zHQQ2IW3svo',
 			},
 			{
-				name: 'Let\'s have a <dialog>',
+				name: "Let's have a <dialog>",
 				githubAuthor: 'Dreitzner',
 				youtubeReplayLink: 'https://youtu.be/XkC29lskoM0',
-			}
-		]
+			},
+		],
 	},
 	{
 		dateISO: '2022-10-24T16:00:00.000Z',
@@ -33,19 +33,19 @@ export const meetups: TMeetup[] = [
 			{
 				name: 'The easy way - an introduction to Sveltekit',
 				githubAuthor: 'dreitzner',
-				youtubeReplayLink: 'https://youtu.be/t-LKRrNedps'
+				youtubeReplayLink: 'https://youtu.be/t-LKRrNedps',
 			},
 			{
 				name: 'Your Custom Component Library: Improving Workflows and DX in svelte',
 				githubAuthor: 'jjnp',
-				youtubeReplayLink: 'https://youtu.be/TQsJU_P1UBU'
+				youtubeReplayLink: 'https://youtu.be/TQsJU_P1UBU',
 			},
 			{
 				name: 'Test it with playwright, you must!',
 				githubAuthor: 'jycouet',
-				youtubeReplayLink: 'https://youtu.be/svlsOKEF4QM'
-			}
-		]
+				youtubeReplayLink: 'https://youtu.be/svlsOKEF4QM',
+			},
+		],
 	},
 	{
 		dateISO: '2022-07-04T16:00:00.000Z',
@@ -57,18 +57,18 @@ export const meetups: TMeetup[] = [
 			{
 				name: 'From zero to package by the end of the talk',
 				githubAuthor: 'ivanhofer',
-				youtubeReplayLink: 'https://youtu.be/1chhhyCHVBw'
+				youtubeReplayLink: 'https://youtu.be/1chhhyCHVBw',
 			},
 			{
 				name: 'What if using GraphQL would be easy? Especially in SvelteKit!',
 				githubAuthor: 'jycouet',
-				youtubeReplayLink: 'https://youtu.be/Ggz5cvxDwFs'
+				youtubeReplayLink: 'https://youtu.be/Ggz5cvxDwFs',
 			},
 			{
 				name: 'Svackage - Svelte package inception with turborepo',
 				githubAuthor: 'dreitzner',
-				youtubeReplayLink: 'https://youtu.be/CjtlKDDJAf0'
-			}
-		]
-	}
+				youtubeReplayLink: 'https://youtu.be/CjtlKDDJAf0',
+			},
+		],
+	},
 ];

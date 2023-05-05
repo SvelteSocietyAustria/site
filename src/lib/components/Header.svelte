@@ -16,7 +16,7 @@
 	const routes: { name: string; href: string }[] = [
 		{ name: 'Meetups', href: '/' },
 		{ name: 'About', href: '/about' },
-		{ name: 'Chapters', href: '/chapters' }
+		{ name: 'Chapters', href: '/chapters' },
 	];
 </script>
 
@@ -26,16 +26,22 @@
 
 <header>
 	<div class="flex items-center">
-		<img src="/logos/Logo-Svelte.svg" alt="Svelte Society Austria Logo" />
+		<img
+			src="/logos/Logo-Svelte.svg"
+			alt="Svelte Society Austria Logo"
+		/>
 		<div class="logoFont"><span class="sr-only">S</span>velte Society Austria</div>
 	</div>
 	<nav>
 		{#each routes as { name, href }}
-			<a {href} aria-current={(href.length > 1
-				? $page.url.pathname.startsWith(href)
-				: href === $page.url.pathname)
-			? 'page'
-			: undefined}>{name}</a>
+			<a
+				{href}
+				aria-current={(
+					href.length > 1 ? $page.url.pathname.startsWith(href) : href === $page.url.pathname
+				)
+					? 'page'
+					: undefined}>{name}</a
+			>
 		{/each}
 	</nav>
 </header>

@@ -3,25 +3,28 @@
 	import MeetupGallery from './MeetupGallery.svelte';
 
 	export let data;
-    $:( {
-        dateISO,
-        name,
-        lumaLink,
-        by,
-        pictureCount,
-        talks,
-        deployUrl,
-     } = data)
+	$: ({ dateISO, name, lumaLink, by, pictureCount, talks, deployUrl } = data);
 </script>
+
 <ul>
-    <Meetup {dateISO} {name} {lumaLink} {by} {talks} {pictureCount} {deployUrl}>
-        <MeetupGallery {dateISO} {deployUrl} {pictureCount} />
-    </Meetup>
+	<Meetup
+		{dateISO}
+		{name}
+		{lumaLink}
+		{by}
+		{talks}
+	>
+		<MeetupGallery
+			{dateISO}
+			{deployUrl}
+			{pictureCount}
+		/>
+	</Meetup>
 </ul>
 <slot />
 
 <style>
-    ul {
+	ul {
 		list-style: none;
 		margin: 2rem 0;
 	}

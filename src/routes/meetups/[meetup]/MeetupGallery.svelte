@@ -1,23 +1,21 @@
 <script lang="ts">
+	import { afterNavigate } from "$app/navigation";
 	import { page } from "$app/stores";
 	import { getGeneratedImageBaseUrl, getIndexString } from "$lib/util";
-	import GalleryPicture from "./gallery/[pictureId]/GalleryPicture.svelte";
 
     export let dateISO: TDateISO;
     export let pictureCount = 0;
     export let deployUrl: string;
 
     const month = dateISO.split('T')[0] as string;
-    let picture: string | undefined;
 
-    $: {
-        const split = $page.url.pathname.split('/')
-        picture = split[4]
-    }
     let lastClicked: HTMLElement | null;
     const remember = (event: MouseEvent) => (lastClicked = event.currentTarget as HTMLElement)
-    // TODO: reset focus when navigate?
-    const restoreFocus = () => {lastClicked?.focus()}
+
+    afterNavigate(() => {
+        lastClicked?.focus()
+    })
+
 </script>
 {#if pictureCount}
     <h3>Gallery</h3>
@@ -33,9 +31,6 @@
             </a>
         {/each}
     </section>
-    <!-- {#if picture}
-        <GalleryPicture {deployUrl} {month} {picture} {pictureCount} on:close={restoreFocus} />
-    {/if} -->
 {/if}
 
 <style>

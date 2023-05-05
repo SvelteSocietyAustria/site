@@ -10,9 +10,7 @@
 	export let by: TMeetupBy;
 	export let talks: TTalk[];
 	export let isPast = false;
-	export let deployUrl: string;
 	export let isDetail = false;
-	export let pictureCount = 0;
 </script>
 
 <li class:isDetail data-day={new Date(dateISO).getDate()} data-month={getMonth(dateISO)}>

@@ -3,7 +3,6 @@
 	import By from '$lib/components/By.svelte';
 	import Talk from '$lib/components/Talk.svelte';
 	import { getMonth, meetupToSlug } from '$lib/util';
-	import MeetupGallery from './MeetupGallery.svelte';
 
 	export let dateISO: TDateISO;
 	export let name: string;
@@ -11,32 +10,44 @@
 	export let by: TMeetupBy;
 	export let talks: TTalk[];
 	export let isPast = false;
-	export let deployUrl: string;
 	export let isDetail = false;
-	export let pictureCount = 0;
 </script>
 
-<li class:isDetail data-day={new Date(dateISO).getDate()} data-month={getMonth(dateISO)}>
+<li
+	class:isDetail
+	data-day={new Date(dateISO).getDate()}
+	data-month={getMonth(dateISO)}
+>
 	<section class:isPast>
 		<header>
 			<h3>{name}</h3>
 			<p class="meetupInfo">
-				<a href={lumaLink} target="_blank" rel="noopener noreferrer">📅 Event Page</a>
+				<a
+					href={lumaLink}
+					target="_blank"
+					rel="noopener noreferrer">📅 Event Page</a
+				>
 				<By {by} />
 			</p>
 		</header>
-		{#if isDetail}
-			<MeetupGallery {deployUrl} {dateISO} {pictureCount} />
-		{/if}
+		<slot />
 		{#each talks as { githubAuthor, name, youtubeReplayLink }}
-			<Talk {githubAuthor} {name} {youtubeReplayLink} {isDetail} />
+			<Talk
+				{githubAuthor}
+				{name}
+				{youtubeReplayLink}
+				{isDetail}
+			/>
 		{:else}
 			<div class="talk">
 				<i> No talks to announce yet. </i>
 			</div>
 		{/each}
 		{#if isPast}
-			<a class="details" href="/meetups/{meetupToSlug(name)}">Details</a>
+			<a
+				class="details"
+				href="/meetups/{meetupToSlug(name)}">Details</a
+			>
 		{/if}
 	</section>
 	<div class="background" />

@@ -9,41 +9,41 @@ export const load: PageLoad = () => {
 		{
 			displayName: 'Domenik Reitzner',
 			twitter: 'https://twitter.com/reitznerdomenik',
-			githubAuthor: 'dreitzner'
+			githubAuthor: 'dreitzner',
 		},
 		{
 			displayName: 'Ermin Celikovic',
 			twitter: 'https://twitter.com/celikovic',
-			githubAuthor: 'ermincelikovic'
+			githubAuthor: 'ermincelikovic',
 		},
 		{
 			displayName: 'Ivan Hofer',
 			twitter: 'https://twitter.com/ivanhofer_',
-			githubAuthor: 'ivanhofer'
+			githubAuthor: 'ivanhofer',
 		},
 		{
 			displayName: 'Jan-Dennis Drenkhahn',
 			twitter: 'https://twitter.com/crashoverried',
-			githubAuthor: 'stillday'
+			githubAuthor: 'stillday',
 		},
 		{
 			displayName: 'Jean-Yves Couët',
 			twitter: 'https://twitter.com/jycouet',
-			githubAuthor: 'jycouet'
-		}
+			githubAuthor: 'jycouet',
+		},
 	];
 
 	const sponsors: TSponsor[] = [
 		{
 			name: 'Emakina CEE',
 			website: 'https://www.emakina.com/de-at',
-			logo: '/logos/Logo-Emakina.svg'
+			logo: '/logos/Logo-Emakina.svg',
 		},
 		{
 			name: 'iteratec GmbH',
 			website: 'https://www.iteratec.com/',
-			logo: '/logos/Logo-iteratec.png'
-		}
+			logo: '/logos/Logo-iteratec.png',
+		},
 	];
 
 	return { founders, sponsors };

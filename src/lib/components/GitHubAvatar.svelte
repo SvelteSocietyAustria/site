@@ -12,7 +12,7 @@
 			if (githubAuthor) {
 				const res = await fetch(url, {
 					mode: 'cors',
-					redirect: 'follow'
+					redirect: 'follow',
 				});
 				const blob = await res.blob();
 				return URL.createObjectURL(blob);
@@ -31,7 +31,7 @@
 			update() {
 				refreshImg(node);
 			},
-			destroy() {}
+			destroy() {},
 		};
 	};
 
@@ -46,7 +46,11 @@
 	};
 </script>
 
-<a href="https://github.com/{githubAuthor}" target="_blanck" rel="noopener noreferrer">
+<a
+	href="https://github.com/{githubAuthor}"
+	target="_blanck"
+	rel="noopener noreferrer"
+>
 	<img
 		class="rouned"
 		width={size}

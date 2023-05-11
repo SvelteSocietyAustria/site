@@ -79,17 +79,30 @@
 		<div>
 			<label for="githubAuthor">Github Author </label>
 		</div>
-		<input name="githubAuthor" type="text" placeholder="*" bind:value={githubAuthor} />
+		<input
+			name="githubAuthor"
+			type="text"
+			placeholder="*"
+			bind:value={githubAuthor}
+		/>
 	</div>
 	<div>
 		<div>
 			<label for="name">Name </label>
 		</div>
-		<input name="name" type="text" bind:value={name} placeholder="optional" />
+		<input
+			name="name"
+			type="text"
+			bind:value={name}
+			placeholder="optional"
+		/>
 	</div>
 </div>
 
-<div class="frame" id="tumb">
+<div
+	class="frame"
+	id="tumb"
+>
 	<div class="logo">
 		<img
 			width="500px"
@@ -98,7 +111,11 @@
 		/>
 	</div>
 	<div class="gh-img">
-		<GitHubAvatar size={300} {githubAuthor} asObjectUrl />
+		<GitHubAvatar
+			size={300}
+			{githubAuthor}
+			asObjectUrl
+		/>
 	</div>
 	<div class="gh-name">
 		{name || githubAuthor || '*'}
@@ -108,7 +125,10 @@
 	</div>
 </div>
 <br />
-<button style="height: 3rem; width: 10rem;" on:click={download}>Download</button>
+<button
+	style="height: 3rem; width: 10rem;"
+	on:click={download}>Download</button
+>
 
 <style>
 	.frame {

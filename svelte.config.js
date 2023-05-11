@@ -11,10 +11,10 @@ const config = {
 	kit: {
 		adapter: process.env.VERCEL_GIT_COMMIT_REF
 			? adapterVercel({
-				runtime: 'nodejs18.x'
-			})
-			: adapterCloudflare()
-	}
+					runtime: 'nodejs18.x',
+			  })
+			: adapterCloudflare(),
+	},
 };
 
 export default config;

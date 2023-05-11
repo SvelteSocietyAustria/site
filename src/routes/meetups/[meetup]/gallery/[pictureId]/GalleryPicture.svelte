@@ -38,6 +38,7 @@
 		const altPressed = event.altKey;
 		if (event.key === 'ArrowLeft' && !altPressed) return back();
 		if (event.key === 'ArrowRight' && !altPressed) return forward();
+		return;
 	};
 </script>
 

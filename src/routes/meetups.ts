@@ -29,7 +29,7 @@ export const meetups: TMeetup[] = [
 		pictureCount: 0,
 		talks: [
 			{
-				name: 'Super secret talk 😉',
+				name: 'Lightning talk: You might not need a slider library',
 				githubAuthor: 'ermincelikovic',
 			},
 			{

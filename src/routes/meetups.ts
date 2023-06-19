@@ -1,5 +1,47 @@
 import type { TMeetup } from '$lib/components/TSvienna';
 export const meetups: TMeetup[] = [
+	// {
+	// 	dateISO: '2023-10-09T16:00:00.000Z',
+	// 	name: '2023/09 Svienna - Svelte Society Vienna',
+	// 	lumaLink: 'https://lu.ma/2023-09-svienna',
+	// 	by: 'svienna',
+	// 	pictureCount: 0,
+	// 	talks: [
+	// 		{
+	// 			name: 'Super secret talk 😉',
+	// 			githubAuthor: 'ermincelikovic',
+	// 		},
+	// 		{
+	// 			name: 'Progressive enhancement with SvelteKit',
+	// 			githubAuthor: 'dreitzner',
+	// 		},
+	// 		{
+	// 			name: 'SvelteKit & Remult... fullstack apps in minutes!',
+	// 			githubAuthor: 'jycouet',
+	// 		},
+	// 	],
+	// },
+	{
+		dateISO: '2023-06-19T16:00:00.000Z',
+		name: '2023/06 Svienna - Svelte Society Vienna',
+		lumaLink: 'https://lu.ma/2023-06-svienna',
+		by: 'svienna',
+		pictureCount: 0,
+		talks: [
+			{
+				name: 'Lightning talk: You might not need a slider library',
+				githubAuthor: 'ermincelikovic',
+			},
+			{
+				name: 'Progressive enhancement with SvelteKit',
+				githubAuthor: 'dreitzner',
+			},
+			{
+				name: 'SvelteKit & Remult... fullstack apps in minutes!',
+				githubAuthor: 'jycouet',
+			},
+		],
+	},
 	{
 		dateISO: '2023-02-20T16:00:00.000Z',
 		name: '2023/02 Svienna - Svelte Society Vienna',

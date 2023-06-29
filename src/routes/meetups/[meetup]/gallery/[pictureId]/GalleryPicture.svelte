@@ -51,7 +51,7 @@
 	<form
 		method="dialog"
 		use:clickOutside={close}
-		in:fade
+		in:fade|global
 		aria-labelledby="gallery_label"
 	>
 		<h2

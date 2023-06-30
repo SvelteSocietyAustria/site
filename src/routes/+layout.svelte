@@ -1,7 +1,7 @@
 <script lang="ts">
 	import { page } from '$app/stores';
-	import Footer from '$lib/components/Footer.svelte';
-	import Header from '$lib/components/Header.svelte';
+	import Footer from './Footer.svelte';
+	import Header from './Header.svelte';
 
 	const getTitle = () => {
 		const firstUrlSegment = $page.url.pathname.split('/')[1] || 'Home';
@@ -89,7 +89,6 @@
 <style>
 	main {
 		padding: 2rem;
-		margin-bottom: 3.5rem;
 		max-width: 800px;
 		margin: 2rem auto;
 	}

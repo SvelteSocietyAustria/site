@@ -1,7 +1,7 @@
 <script lang="ts">
 	import { afterNavigate } from '$app/navigation';
 	import { page } from '$app/stores';
-	import { pageTitle } from '../stores/pageTitle';
+	import { pageTitle } from '$lib/stores/pageTitle';
 
 	afterNavigate((route: any) => {
 		const prefix = 'Svelte Society Austria';

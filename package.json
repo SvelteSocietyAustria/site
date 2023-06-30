@@ -1,6 +1,6 @@
 {
 	"name": "site",
-	"version": "0.2.0",
+	"version": "1.0.0",
 	"scripts": {
 		"dev": "vite dev",
 		"build": "vite build",
@@ -34,6 +34,7 @@
 	},
 	"dependencies": {
 		"@svackages/click-outside-action": "^1.0.3",
+		"@svelte-put/dragscroll": "^2.0.0",
 		"html2canvas": "^1.4.1"
 	}
 }

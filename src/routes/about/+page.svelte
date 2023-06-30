@@ -1,6 +1,8 @@
 <script lang="ts">
-	import GitHubAvatar from '../../lib/components/GitHubAvatar.svelte';
+	import GitHubAvatar from '$lib/components/GitHubAvatar.svelte';
 	import type { PageData } from './$types';
+	
+	import { dragscroll } from '@svelte-put/dragscroll';
 
 	export let data: PageData;
 </script>
@@ -41,7 +43,7 @@
 
 <section class="sponsors">
 	<h2>Sponsors</h2>
-	<div class="flex -list">
+	<div class="flex -list" use:dragscroll={{}}>
 		{#each data.sponsors as { name, website, logo }}
 			<a
 				class="flex"
@@ -97,21 +99,40 @@
 	.sponsors {
 		margin-top: 4rem;
 		margin-bottom: 4rem;
+		--gradient-opacity: 0.5;
+	}
+	.sponsors div {
+		gap: 1.5rem;
+		overflow-y: auto;
+		padding-bottom: 10px;
+		margin: 2rem 0;
+	}
+	.sponsors div::-webkit-scrollbar {
+		width: 5px;
+		height: 8px;
+	}
+	.sponsors div::-webkit-scrollbar-thumb {
+		background-color: var(--color-black-light);
 	}
 	.sponsors img {
-		max-width: 120px;
+		height: auto;
+		width: 100px;
+		max-height: 100px;
 	}
 	.sponsors a {
 		flex-direction: column;
 		align-items: center;
-		justify-content: center;
-		border: 3px solid var(--color-black-light);
+		justify-content: flex-end;
 		padding: 1rem;
-		margin-right: 1rem;
 		border-radius: 0.5rem;
 		gap: 0.5rem;
+		white-space: nowrap;
+		color: #fff;
+		background: var(--gradient-red-dark);
+		opacity: 0.8;
+		transition: opacity 300ms;
 	}
-	.sponsors .-list {
-		margin: 2rem 0;
+	.sponsors a:hover, .sponsors a:focus {
+		opacity: 1;
 	}
 </style>

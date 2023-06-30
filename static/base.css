@@ -4,11 +4,14 @@
 }
 
 :root {
+	--color-rgb-red: 238, 48, 45;
+	--color-rgb-red-dark: 167, 35, 32;
 	--color-black-light: #1a1a1a;
 	--color-black: #000;
 	--color-white: #fff;
-	--color-red: #ee302d;
-	--color-red-dark: #a72320;
+	--color-red: rgb(var(--color-rgb-red));
+	--color-red-dark: rgb(var(--color-rgb-red-dark));
+	--gradient-red-dark: linear-gradient(45deg, rgba(var(--color-rgb-red-dark), 0.3), transparent);
 }
 
 * {

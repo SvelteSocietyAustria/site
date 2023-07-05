@@ -1,6 +1,5 @@
 <script>
 	import Discord from '$lib/icons/Discord.svelte';
-
 	import Twitter from '$lib/icons/Twitter.svelte';
 </script>
 

@@ -13,6 +13,7 @@
 		{lumaLink}
 		{by}
 		{talks}
+		isDetail
 	>
 		<MeetupGallery
 			{dateISO}

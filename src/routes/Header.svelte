@@ -60,7 +60,8 @@
 	}
 	nav {
 		display: flex;
-		margin-top: 1rem;
+		margin-top: 2rem;
+		font-size: 1.5rem;
 	}
 	a {
 		padding: 0.5rem 1rem;

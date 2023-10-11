@@ -54,7 +54,7 @@
 	<div class="background-glow" />
 	{#if isDetail}
 		<div class="back">
-			<a href="/meetups">←&nbsp;&nbsp;back</a>
+			<a href="/">←&nbsp;&nbsp;back</a>
 		</div>
 	{/if}
 </li>

@@ -22,15 +22,30 @@ export const meetups: TMeetup[] = [
 	// 	],
 	// },
 	{
+		dateISO: '2024-01-22T18:00:00.000Z',
+		name: '2024/01 Svienna - Svelte Society Vienna',
+		lumaLink: 'https://lu.ma/2024-01-svienna',
+		by: 'svienna',
+		pictureCount: 0,
+		talks: [
+			{
+				name: '🫵 awesome talk?',
+			},
+			{
+				name: '🫵 even better talk?',
+			},
+			{
+				name: '🫵 hand crafted nice & easy talk?',
+			},
+		],
+	},
+	{
 		dateISO: '2023-10-09T18:00:00.000Z',
 		name: '2023/10 Svienna - Svelte Society Vienna',
 		lumaLink: 'https://lu.ma/2023-10-svienna',
 		by: 'svienna',
 		pictureCount: 0,
 		talks: [
-			{
-				name: '🫵 Your awesome talk?',
-			},
 			{
 				name: 'SvelteKit: From landing page to offline PWAs',
 				githubAuthor: 'DaniruKun',
@@ -51,12 +66,12 @@ export const meetups: TMeetup[] = [
 			{
 				name: 'How to use sentry.io in your SvelteKit App',
 				githubAuthor: 'Lms24',
-				youtubeReplayLink: 'https://youtu.be/u41-MtPGH04'
+				youtubeReplayLink: 'https://youtu.be/u41-MtPGH04',
 			},
 			{
 				name: 'Lightning talk: You might not need a slider library',
 				githubAuthor: 'ermincelikovic',
-				youtubeReplayLink: 'https://youtu.be/dSUmtijkFOc'
+				youtubeReplayLink: 'https://youtu.be/dSUmtijkFOc',
 			},
 			{
 				name: 'Progressive enhancement with SvelteKit',
@@ -65,7 +80,7 @@ export const meetups: TMeetup[] = [
 			{
 				name: 'SvelteKit & Remult... fullstack apps in minutes!',
 				githubAuthor: 'jycouet',
-				youtubeReplayLink: 'https://youtu.be/N8d290fTzq8'
+				youtubeReplayLink: 'https://youtu.be/N8d290fTzq8',
 			},
 		],
 	},

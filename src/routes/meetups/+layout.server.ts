@@ -3,7 +3,7 @@ import { redirect } from '@sveltejs/kit';
 import type { LayoutServerLoad } from './$types';
 
 export const load = (async ({ url }) => {
-	if (url.href === '/meetups') redirect(302, '/');
+	if (url.pathname === '/meetups') redirect(302, '/');
 	return {
 		deployUrl,
 	};

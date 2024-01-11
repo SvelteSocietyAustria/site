@@ -120,10 +120,10 @@
 		box-shadow: 0px 0px 15px 12px #fff7;
 		z-index: 1;
 	}
-	li:hover .background {
+	li:hover .background, li:focus-within .background {
 		opacity: 0.92;
 	}
-	li:hover .background-glow {
+	li:hover .background-glow, li:focus-within .background-glow {
 		scale: 0.99;
 	}
 	section {

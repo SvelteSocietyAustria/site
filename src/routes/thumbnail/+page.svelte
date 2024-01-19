@@ -131,6 +131,9 @@
 >
 
 <style>
+	:global(main) {
+		position: absolute;
+	}
 	.frame {
 		background: var(--color-black-light);
 		margin-top: 1rem;

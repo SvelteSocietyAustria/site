@@ -37,7 +37,12 @@ export const meetups: TMeetup[] = [
 				githubAuthor: 'dreitzner',
 			},
 			{
-				name: '🫵 hand crafted nice & easy talk?',
+				name: 'Building an Error and Performance Monitoring SDK for SvelteKit',
+				githubAuthor: 'Lms24',
+			},
+			{
+				name: 'Are you on right route ?',
+				githubAuthor: 'jycouet',
 			},
 		],
 	},

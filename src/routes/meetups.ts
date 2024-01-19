@@ -29,10 +29,12 @@ export const meetups: TMeetup[] = [
 		pictureCount: 0,
 		talks: [
 			{
-				name: '🫵 awesome talk?',
+				name: 'Using SvelteKit to build an interactive portfolio',
+				githubAuthor: 'lmarti17',
 			},
 			{
-				name: '🫵 even better talk?',
+				name: 'A brief history of prototyping',
+				githubAuthor: 'dreitzner',
 			},
 			{
 				name: '🫵 hand crafted nice & easy talk?',

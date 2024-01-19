@@ -33,7 +33,8 @@ export const meetups: TMeetup[] = [
 				githubAuthor: 'lmarti17',
 			},
 			{
-				name: '🫵 even better talk?',
+				name: 'A brief history of prototyping',
+				githubAuthor: 'dreitzner',
 			},
 			{
 				name: '🫵 hand crafted nice & easy talk?',

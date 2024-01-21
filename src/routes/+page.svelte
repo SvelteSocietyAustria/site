@@ -139,7 +139,7 @@
 		margin: 0 auto;
 		width: 100%;
 		padding-top: 160px;
-		padding-bottom: 60px;
+		padding-bottom: 40px;
 
 		.wrapper {
 			max-width: 550px;
@@ -160,7 +160,7 @@
 		position: relative;
 		background: var(--color-black);
 		top: 0;
-		margin-top: 400px;
+		margin-top: 340px;
 		z-index: 1;
 
 		&::after {

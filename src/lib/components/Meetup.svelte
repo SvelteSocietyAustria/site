@@ -140,18 +140,7 @@
 		}
 	}
 
-	.meetupInfo {
-		display: flex;
-		justify-content: space-between;
-		margin-left: 8px;
-	}
-
 	.details {
 		padding: 1rem;
-	}
-
-	.back {
-		text-align: right;
-		margin-right: 2rem;
 	}
 </style>

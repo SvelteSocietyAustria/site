@@ -9,12 +9,12 @@
 
 {#if meetups.length}
 	<ul class:single={meetups.length == 1}>
-		{#each meetups as { dateISO, name, lumaLink, by, talks }}
+		{#each meetups as { dateISO, name, lumaLink, by, talks, time }}
 			<Meetup
 				{dateISO}
 				{name}
+				{time}
 				{lumaLink}
-				{by}
 				{talks}
 				{isPast}
 			/>
@@ -27,24 +27,12 @@
 <style>
 	ul {
 		list-style: none;
-		display: grid;
-		margin: 2rem 0;
-		--columns: 1;
-		--gap: 2rem;
-		gap: var(--gap);
-		grid-template-columns: repeat(
-			var(--columns),
-			calc(100% / var(--columns) - var(--gap) / 2 * (var(--columns) - 1))
-		);
+		display: flex;
+		flex-direction: column;
+		gap: 2rem;
 	}
 
 	ul.single {
 		--columns: 1;
-	}
-
-	@media screen and (min-width: 800px) {
-		ul {
-			--columns: 2;
-		}
 	}
 </style>

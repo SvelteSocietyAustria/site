@@ -21,6 +21,7 @@
 		{name}
 	</span>
 </div>
+
 {#if youtubeReplayLink && isDetail}
 	<a
 		href={youtubeReplayLink}
@@ -40,16 +41,19 @@
 		display: flex;
 		align-items: center;
 	}
+
 	.talk + :global(.talk) {
-		margin-top: 2rem;
+		margin-top: 1rem;
 	}
+
 	.bubble {
-		margin-left: calc(-2rem - 15px);
-		margin-right: 2rem;
+		margin-right: 1rem;
 	}
+
 	.rewatch {
-		margin: 0 0 2rem 1.5rem;
+		margin: 0 0 2rem 3.5rem;
 	}
+
 	.rewatch span {
 		margin-left: 0.5rem;
 	}

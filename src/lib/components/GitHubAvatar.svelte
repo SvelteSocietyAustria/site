@@ -5,7 +5,7 @@
 	export let size: number = 40;
 	export let asObjectUrl = false;
 
-	$: url = `https://avatars.githubusercontent.com/${githubAuthor}?v=${new Date().getTime()}`;
+	$: url = `https://avatars.githubusercontent.com/${githubAuthor}`;
 
 	const getObjectUrl = async () => {
 		try {

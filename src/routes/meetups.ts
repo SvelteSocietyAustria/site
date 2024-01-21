@@ -2,9 +2,9 @@ import type { TMeetup } from '$lib/components/TSvienna';
 export const meetups: TMeetup[] = [
 	// {
 	// 	dateISO: '2023-10-09T16:00:00.000Z',
+	//  time: '18:00 - 21:00',
 	// 	name: '2023/09 Svienna - Svelte Society Vienna',
 	// 	lumaLink: 'https://lu.ma/2023-10-svienna',
-	// 	by: 'svienna',
 	// 	pictureCount: 0,
 	// 	talks: [
 	// 		{
@@ -23,9 +23,9 @@ export const meetups: TMeetup[] = [
 	// },
 	{
 		dateISO: '2024-01-22T18:00:00.000Z',
+		time: '18:00 - 21:00',
 		name: '2024/01 Svienna - Svelte Society Vienna',
 		lumaLink: 'https://lu.ma/2024-01-svienna',
-		by: 'svienna',
 		pictureCount: 0,
 		talks: [
 			{
@@ -50,7 +50,6 @@ export const meetups: TMeetup[] = [
 		dateISO: '2023-10-09T18:00:00.000Z',
 		name: '2023/10 Svienna - Svelte Society Vienna',
 		lumaLink: 'https://lu.ma/2023-10-svienna',
-		by: 'svienna',
 		pictureCount: 0,
 		talks: [
 			{
@@ -67,7 +66,6 @@ export const meetups: TMeetup[] = [
 		dateISO: '2023-06-19T16:00:00.000Z',
 		name: '2023/06 Svienna - Svelte Society Vienna',
 		lumaLink: 'https://lu.ma/2023-06-svienna',
-		by: 'svienna',
 		pictureCount: 0,
 		talks: [
 			{
@@ -95,7 +93,6 @@ export const meetups: TMeetup[] = [
 		dateISO: '2023-02-20T16:00:00.000Z',
 		name: '2023/02 Svienna - Svelte Society Vienna',
 		lumaLink: 'https://lu.ma/2023-02-Svienna',
-		by: 'svienna',
 		pictureCount: 8,
 		talks: [
 			{
@@ -118,7 +115,6 @@ export const meetups: TMeetup[] = [
 		dateISO: '2022-10-24T16:00:00.000Z',
 		name: '2022/10 Svienna - Svelte Society Vienna',
 		lumaLink: 'https://lu.ma/2022-10-Svienna',
-		by: 'svienna',
 		pictureCount: 14,
 		talks: [
 			{
@@ -142,7 +138,6 @@ export const meetups: TMeetup[] = [
 		dateISO: '2022-07-04T16:00:00.000Z',
 		name: '2022/07 Svienna - Svelte Society Vienna',
 		lumaLink: 'https://lu.ma/2022-07-Svienna',
-		by: 'svienna',
 		pictureCount: 10,
 		talks: [
 			{

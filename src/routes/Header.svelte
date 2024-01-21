@@ -15,8 +15,7 @@
 
 	const routes: { name: string; href: string }[] = [
 		{ name: 'Meetups', href: '/' },
-		{ name: 'About', href: '/about' },
-		{ name: 'Chapters', href: '/chapters' },
+		{ name: 'Propose a talk', href: '/propose-a-talk' },
 	];
 </script>
 
@@ -24,50 +23,147 @@
 	<title>{$pageTitle}</title>
 </svelte:head>
 
-<header>
-	<div class="flex items-center">
-		<img
-			src="/logos/Logo-Svelte.svg"
-			alt="Svelte Society Austria Logo"
-		/>
-		<div class="logoFont"><span class="sr-only">S</span>velte Society Austria</div>
+<header class="header">
+	<div class="header__wrapper">
+		<a href="/" class="header__logo">
+			<img src="/logos/Logo-Svelte.svg" alt="Svelte Society Austria Logo" />
+			<div class="header__logo-type">Svelte Society <br>Austria</div>
+		</a>
+
+		<nav>
+			{#each routes as { name, href }}
+				<a
+					{href}
+					aria-current={(
+						href.length > 1 ? $page.url.pathname.startsWith(href) : href === $page.url.pathname
+					)
+						? 'page'
+						: undefined}>{name}</a
+				>
+			{/each}
+		</nav>
 	</div>
-	<nav>
-		{#each routes as { name, href }}
-			<a
-				{href}
-				aria-current={(
-					href.length > 1 ? $page.url.pathname.startsWith(href) : href === $page.url.pathname
-				)
-					? 'page'
-					: undefined}>{name}</a
-			>
-		{/each}
-	</nav>
 </header>
 
-<style>
-	header {
-		background: var(--color-black-light);
-		padding: 0.5rem 1rem 0;
+<div class="header-spacer"></div>
+
+<style lang="scss">
+
+	.header-spacer {
+		height: 160px;
+	}
+
+	.header {
+		position: fixed;
+		top: 1rem;
+		width: 100%;
 		display: flex;
-		flex-direction: column;
 		align-items: center;
-		border-bottom: 1px solid var(--color-red);
+		justify-content: space-between;
+		z-index: 5;
+
+		&__wrapper {
+			position: relative;
+			padding: .75rem;
+			width: 550px;
+			display: flex;
+			justify-content: space-between;
+			margin: 0 auto;
+			border-radius: 10px;
+			background: rgba(22, 22, 22, 0.65);
+			backdrop-filter: blur(12px);
+			box-shadow:
+				0px 0px 5px rgba(0, 0, 0, 0.05),
+				0px 0px 20px rgba(0, 0, 0, 0.03);
+		}
+
+		&__logo {
+			display: flex;
+			align-items: center;
+			min-width: 175px;
+
+			img {
+				height: 2.5em;
+				width: auto;
+			}
+
+			&-type {
+				color: var(--color-white);
+				line-height: 1.1em;
+				padding-left: .6rem;
+				font-size: 1rem;
+			}
+		}
+
+		nav {
+			display: flex;
+			gap: .25rem;
+			font-size: 1rem;
+
+			a {
+				font-size: 1rem;
+				padding: 0.5rem 1rem;
+				border-radius: 5px;
+				transition: 150ms all;
+				color: var(--color-white);
+
+				&:hover,
+				&:focus {
+					color: var(--color-red);
+					background-color: var(--color-black);
+				}
+			}
+			
+			[aria-current] {
+				color: var(--color-white);
+				background-color: var(--color-black);
+			}
+		}
 	}
-	.logoFont {
-		font-size: 1.5rem;
+
+	@media screen and (max-width: 575px) {
+		.header {
+			top: .5rem;
+
+			&__wrapper {
+				width: calc(100% - 1rem);
+			}
+
+			&__logo {
+				min-width: 0;
+				flex: 1;
+			}
+
+			nav {
+				gap: 0;
+
+				a {
+					padding: .5rem .75rem;
+					display: flex;
+					justify-content: center;
+					align-items: center;
+				}
+			}
+		}
 	}
-	nav {
-		display: flex;
-		margin-top: 2rem;
-		font-size: 1.5rem;
-	}
-	a {
-		padding: 0.5rem 1rem;
-	}
-	[aria-current] {
-		color: var(--color-white);
-		background-color: var(--color-red);
+
+	@media screen and (max-width: 425px) {
+		.header {
+			&__logo {
+				img {
+					height: 2em;
+				}
+
+				&-type {
+					font-size: .8rem;
+				}
+			}
+
+			nav {
+				a {
+					font-size: .8rem;
+				}
+			}
+		}
 	}
 </style>

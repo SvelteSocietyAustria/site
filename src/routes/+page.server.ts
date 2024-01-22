@@ -41,12 +41,12 @@ const founders: TFounder[] = [
 
 const sponsors: TSponsor[] = [
 	{
-		name: 'sentry',
+		name: 'Sentry',
 		website: 'https://sentry.io/',
 		logo: logoSentry,
 	},
 	{
-		name: 'vercel',
+		name: 'Vercel',
 		website: 'https://vercel.com/',
 		logo: logoVercel,
 	},

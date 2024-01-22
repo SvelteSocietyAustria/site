@@ -6,23 +6,26 @@
 	$: ({ dateISO, name, lumaLink, by, pictureCount, talks, deployUrl } = data);
 </script>
 
-<ul>
-	<Meetup
-		{dateISO}
-		{name}
-		{lumaLink}
-		{by}
-		{talks}
-		isDetail
-	>
-		<MeetupGallery
+<div class="wrapper">
+	<ul>
+		<Meetup
 			{dateISO}
-			{deployUrl}
-			{pictureCount}
-		/>
-	</Meetup>
-</ul>
-<slot />
+			{name}
+			{lumaLink}
+			{by}
+			{talks}
+			isDetail
+		>
+			<MeetupGallery
+				{dateISO}
+				{deployUrl}
+				{pictureCount}
+			/>
+		</Meetup>
+	</ul>
+	<slot />
+
+</div>
 
 <style>
 	ul {

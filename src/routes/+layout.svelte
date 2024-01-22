@@ -88,8 +88,6 @@
 
 <style>
 	main {
-		padding: 2rem;
-		max-width: 800px;
-		margin: 2rem auto;
+		margin: 0 auto;
 	}
 </style>

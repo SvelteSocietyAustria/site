@@ -4,7 +4,6 @@
 </script>
 
 <footer>
-	<span>&copy; Svelte Society Austria</span>
 	<!-- discord, twitter -->
 	<!-- https://twitter.com/svelteaustria -->
 	<a href="/thumbnail">Thumbnail</a>
@@ -33,26 +32,31 @@
 			height={22}
 		/>
 	</a>
+	<span>&copy; Svelte Society Austria</span>
 </footer>
 
 <style>
 	footer {
-		position: fixed;
-		bottom: 0;
+		height: 100px;
 		width: 100%;
-		background: var(--color-black-light);
+		background: #101010;
 		padding: 0.5rem 1rem;
 		display: flex;
 		flex-wrap: wrap;
 		justify-content: center;
 		align-items: center;
 		z-index: 5;
+		color: rgba(255, 255, 255, .2);;
 	}
 	footer * + *::before {
 		content: '⁝';
 		margin: 0 1rem;
 		color: var(--color-white);
 		opacity: 0.5;
+	}
+	footer a {
+		color: rgba(255, 255, 255, .2);
+		text-decoration: none;
 	}
 	.icon {
 		display: flex;

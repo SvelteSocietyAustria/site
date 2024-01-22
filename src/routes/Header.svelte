@@ -60,11 +60,12 @@
 		display: flex;
 		align-items: center;
 		justify-content: space-between;
+		overflow: hidden;
 		z-index: 5;
 
 		&__wrapper {
 			position: relative;
-			padding: .75rem;
+			//padding: .75rem;
 			width: 550px;
 			display: flex;
 			justify-content: space-between;
@@ -81,6 +82,7 @@
 			display: flex;
 			align-items: center;
 			min-width: 175px;
+			padding: .75rem;
 
 			img {
 				height: 2.5em;
@@ -97,26 +99,59 @@
 
 		nav {
 			display: flex;
-			gap: .25rem;
 			font-size: 1rem;
 
 			a {
+				position: relative;
+				overflow: hidden;
+				display: inline-flex;
+				justify-content: center;
+				align-items: center;
+				padding: .75rem;
 				font-size: 1rem;
 				padding: 0.5rem 1rem;
-				border-radius: 5px;
 				transition: 150ms all;
-				color: var(--color-white);
+				color: rgba(255, 255, 255, 0.4);
+				transition: 600ms all;
 
 				&:hover,
 				&:focus {
 					color: var(--color-red);
-					background-color: var(--color-black);
+				}
+
+				&:after {
+					transition: 600ms all;
+					transform: translateY(5px);
+					opacity: 0;
+					content: '';
+					position: absolute;
+					left: 50%;
+					bottom: -12px;
+					margin-left: -20px;
+					width: 40px;
+					height: 16px;
+					background-color: var(--color-red);
+					border-radius: 10px;
+
+					@media screen and (max-width: 425px) {
+						width: 20px;
+						margin-left: -10px;
+					}
+
+					// red glow
+					box-shadow:
+						0 0 5px 3px rgba(238, 48, 45, .5),
+						0 0 15px 15px rgba(238, 48, 45, .3);
 				}
 			}
 			
 			[aria-current] {
-				color: var(--color-white);
-				background-color: var(--color-black);
+				color: var(--color-red);
+
+				&:after {
+					transform: translateY(0);
+					opacity: 1;
+				}
 			}
 		}
 	}

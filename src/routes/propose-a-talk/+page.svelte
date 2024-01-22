@@ -41,18 +41,9 @@
 			<li>We like to see live demos, but keep the code short and readable</li>
 			<li>Your talk must must not be discriminate, shame or in any other way make people of different races, nationalities or sexual orientation feel unpleasant.</li>
 		</ul>
-		<h3>Preparing for screen recording:</h3>
-		<p>To be able to record your talk, you are required to do a screen recording of your talk from your laptop&nbsp;(with audio) either in .mp4 or .mov formats ONLY (no html formats, .flv, .ogv etc...).</p>
-		<ul>
-			<li>Make sure to test the screen recording plugin/software at home before the meet up to make sure everything is working properly (video, audio, no glitches etc.).</li>
-		</ul>
-		<p>Get your software:</p>
-		<ul>
-			<li>If you use Mac, we can use QuickTime to record the screen.</li>
-			<li>On Windows or Linux, third party software is required. Kindly install and use&nbsp; <a target="_blank" rel="noopener" href="https://obsproject.com/">OBS</a>
-			</li>
-		</ul>
-		<p>&nbsp;</p>
+		<h3>Preparing for screen recording</h3>
+		<p>To be able to record your talk, we'll be using StreamYard.</p>
+		<p>It should be as simple as joining the video call in your browser and sharing your screen. <br><a href="https://support.streamyard.com/hc/en-us/articles/360043291612-Guest-instructions" target="_blank">Read about StreamYard</a></p>
 </section>
 
 <style lang="scss">

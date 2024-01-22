@@ -34,15 +34,27 @@
 	async function download() {
 		const el = document.querySelector('#tumb');
 		if (!el) return;
-		const canvas = await html2canvas(el as HTMLElement);
-		canvas.style.display = 'none';
-		document.body.appendChild(canvas);
-		const image = canvas.toDataURL();
+
+		// Capture the div as it is
+		const capturedCanvas = await html2canvas(el as HTMLElement);
+
+		// Create a new canvas with desired dimensions
+		const finalCanvas = document.createElement('canvas');
+		finalCanvas.width = 1280;
+		finalCanvas.height = 720;
+
+		// Draw the captured image onto the new canvas, scaling it in the process
+		const ctx = finalCanvas.getContext('2d');
+		ctx.drawImage(capturedCanvas, 0, 0, 1280, 720);
+
+		// Convert to data URL and create download link
+		const image = finalCanvas.toDataURL();
 		const a = document.createElement('a');
 		a.setAttribute('download', `${name || githubAuthor} - ${title}.png`);
 		a.setAttribute('href', image);
 		a.click();
 	}
+
 
 	export const replaceStateWithQuery = (values: Record<string, string>) => {
 		const url = new URL(window.location.toString());
@@ -197,13 +209,13 @@
 	.gh-name {
 		flex: 0 0 100%;
 		margin-top: 1rem;
-		font-size: 2.5vw;
+		font-size: min(3vw, 20px);
 		color: var(--color-red);
 	}
 
 	.title {
 		flex: 0 0 100%;
-		font-size: 3vw;
+		font-size: min(4vw, 30px);
 		margin: 1vw 0;
 	}
 

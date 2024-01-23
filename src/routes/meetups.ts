@@ -26,7 +26,7 @@ export const meetups: TMeetup[] = [
 		time: '18:00 - 21:00',
 		name: '2024/01 Svienna - Svelte Society Vienna',
 		lumaLink: 'https://lu.ma/2024-01-svienna',
-		pictureCount: 0,
+		pictureCount: 13,
 		talks: [
 			{
 				name: 'Using SvelteKit to build an interactive portfolio',

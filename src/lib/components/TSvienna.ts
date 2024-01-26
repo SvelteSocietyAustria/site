@@ -1,8 +1,8 @@
 export type TMeetup = {
 	dateISO: TDateISO;
+	time?: string;
 	name: string;
 	lumaLink: string;
-	by: TMeetupBy;
 	pictureCount: number;
 	talks: TTalk[];
 };

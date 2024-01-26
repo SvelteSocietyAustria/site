@@ -40,12 +40,12 @@
 
 		// Create a new canvas with desired dimensions
 		const finalCanvas = document.createElement('canvas');
-		finalCanvas.width = 1280;
-		finalCanvas.height = 720;
+		finalCanvas.width = 1920;
+		finalCanvas.height = 1080;
 
 		// Draw the captured image onto the new canvas, scaling it in the process
 		const ctx = finalCanvas.getContext('2d');
-		ctx.drawImage(capturedCanvas, 0, 0, 1280, 720);
+		ctx.drawImage(capturedCanvas, 0, 0, 1920, 1080);
 
 		// Convert to data URL and create download link
 		const image = finalCanvas.toDataURL();
@@ -54,7 +54,6 @@
 		a.setAttribute('href', image);
 		a.click();
 	}
-
 
 	export const replaceStateWithQuery = (values: Record<string, string>) => {
 		const url = new URL(window.location.toString());
@@ -139,7 +138,12 @@
 		</div>
 	</div>
 	<br />
-	<button class="button" on:click={download}>Download</button>
+	<button
+		class="button"
+		on:click={download}
+	>
+		Download
+	</button>
 </div>
 
 <style lang="scss">
@@ -156,12 +160,12 @@
 	}
 
 	input {
-		padding: .5rem;
+		padding: 0.5rem;
 	}
 
 	label {
 		display: block;
-		margin-bottom: .3rem;
+		margin-bottom: 0.3rem;
 	}
 
 	.frame {
@@ -169,7 +173,7 @@
 		margin-top: 1rem;
 		border: 1px solid var(--color-black-light);
 		width: 100%;
-		aspect-ratio: 1280 / 720;
+		aspect-ratio: 1920 / 1080;
 		overflow: hidden;
 
 		padding: 2vw 3vw;

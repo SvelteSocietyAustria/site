@@ -15,7 +15,9 @@
 	$: scrolledPx = 0;
 
 	onMount(() => {
-		window.onscroll = () => { scrolledPx = window.scrollY; };
+		window.onscroll = () => {
+			scrolledPx = window.scrollY;
+		};
 
 		const hideElements = document.querySelectorAll('.hide');
 		let i = 0;
@@ -24,7 +26,7 @@
 				el.classList.add('show');
 			}, i * 400);
 			i++;
-		};
+		}
 	});
 
 	$: opacity = 1 - scrolledPx / 250;
@@ -36,13 +38,15 @@
 	});
 </script>
 
-<section class="intro" style="opacity: {opacity}">
+<section
+	class="intro"
+	style="opacity: {opacity}"
+>
 	<div class="wrapper">
-		<h1 class="intro__title h2 hide">
-			Svelte is simplifying web interface development.
-		</h1>
+		<h1 class="intro__title h2 hide">Svelte is simplifying web interface development.</h1>
 		<div class="h5 intro__slogan hide">
-			Our Meetups offer a chance to explore Svelte together in a friendly, welcoming environment, especially for newcomers.
+			Our Meetups offer a chance to explore Svelte together in a friendly, welcoming environment,
+			especially for newcomers.
 		</div>
 	</div>
 </section>
@@ -52,12 +56,9 @@
 		<div class="title">
 			<h2 class="h6 uppercase">Upcoming Event</h2>
 		</div>
-		<MeetupCollection
-			meetups={futureMeetups}
-		/>
+		<MeetupCollection meetups={futureMeetups} />
 	</div>
 </section>
-
 
 <section class="sponsors hide">
 	<div class="wrapper">
@@ -76,19 +77,22 @@
 						src={logo}
 						alt="{name} Logo"
 					/>
-					{name}
+					<span style="margin-left: -2rem; margin-right: -2rem;">
+						{name}
+					</span>
 				</a>
 			{/each}
 		</div>
 
 		<div class="sponsors__message">
 			<p>
-				If you wish to host the event, or support us some other way, feel free to <a href="mailto:reitznerdomenik+svelteaustria@gmail.com">get in touch</a>
+				If you wish to host the event, or support us some other way, feel free to <a
+					href="mailto:reitznerdomenik+svelteaustria@gmail.com">get in touch</a
+				>
 			</p>
 		</div>
 	</div>
 </section>
-
 
 <section class="past-events hide">
 	<div class="wrapper">
@@ -102,7 +106,6 @@
 	</div>
 </section>
 
-
 <section class="founding-members hide">
 	<div class="wrapper">
 		<div class="title">
@@ -110,26 +113,33 @@
 		</div>
 
 		<div class="founding-members__list">
-		{#each data.founders as { displayName, twitter, githubAuthor }}
-			<div class="founder">
-				<GitHubAvatar
-					{githubAuthor}
-					size={60}
-				/>
-				<div>
-					<h3 class="h5">{displayName}</h3>
-					<p>
-						<a href={twitter} target="_blank" rel="noopener noreferrer">twitter</a>
-						/
-						<a href="https://github.com/{githubAuthor}" target="_blank" rel="noopener noreferrer">github</a>
-					</p>
+			{#each data.founders as { displayName, twitter, githubAuthor }}
+				<div class="founder">
+					<GitHubAvatar
+						{githubAuthor}
+						size={60}
+					/>
+					<div>
+						<h3 class="h5">{displayName}</h3>
+						<p>
+							<a
+								href={twitter}
+								target="_blank"
+								rel="noopener noreferrer">twitter</a
+							>
+							/
+							<a
+								href="https://github.com/{githubAuthor}"
+								target="_blank"
+								rel="noopener noreferrer">github</a
+							>
+						</p>
+					</div>
 				</div>
-			</div>
-		{/each}
+			{/each}
 		</div>
 	</div>
 </section>
-
 
 <style lang="scss">
 	.intro {
@@ -209,8 +219,8 @@
 		&__message {
 			text-align: center;
 			padding: 2rem 0 0 0;
-			opacity: .3;
-			font-size: .8rem;
+			opacity: 0.3;
+			font-size: 0.8rem;
 		}
 	}
 
@@ -244,7 +254,7 @@
 
 				p {
 					margin: 0;
-					font-size: .8rem;
+					font-size: 0.8rem;
 				}
 			}
 		}

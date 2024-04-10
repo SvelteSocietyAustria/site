@@ -31,7 +31,7 @@ export const meetups: TMeetup[] = [
 			{
 				name: 'Special Interactive Meetup',
 				githubAuthor: 'SvelteSocietyAustria',
-				youtubeReplayLink: 'https://youtu.be/u41-MtPGH04',
+				youtubeReplayLink: 'https://www.youtube.com/watch?v=WL95jQGMPX0',
 			},
 		],
 	},

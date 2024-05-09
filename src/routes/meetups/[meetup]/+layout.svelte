@@ -3,7 +3,7 @@
 	import MeetupGallery from './MeetupGallery.svelte';
 
 	export let data;
-	$: ({ dateISO, name, lumaLink, by, pictureCount, talks, deployUrl } = data);
+	$: ({ dateISO, name, eventLink, by, pictureCount, talks, deployUrl } = data);
 </script>
 
 <div class="wrapper">
@@ -11,7 +11,7 @@
 		<Meetup
 			{dateISO}
 			{name}
-			{lumaLink}
+			{eventLink}
 			{by}
 			{talks}
 			isDetail

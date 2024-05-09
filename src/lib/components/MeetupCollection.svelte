@@ -9,12 +9,12 @@
 
 {#if meetups.length}
 	<ul class:single={meetups.length == 1}>
-		{#each meetups as { dateISO, name, lumaLink, by, talks, time }}
+		{#each meetups as { dateISO, name, eventLink, by, talks, time }}
 			<Meetup
 				{dateISO}
 				{name}
 				{time}
-				{lumaLink}
+				{eventLink}
 				{talks}
 				{isPast}
 			/>

@@ -2,7 +2,7 @@ export type TMeetup = {
 	dateISO: TDateISO;
 	time?: string;
 	name: string;
-	lumaLink: string;
+	eventLink: string;
 	pictureCount: number;
 	talks: TTalk[];
 };

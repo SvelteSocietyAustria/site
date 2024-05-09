@@ -6,7 +6,7 @@
 	export let dateISO: TDateISO;
 	export let name: string;
 	export let time: string;
-	export let lumaLink: string;
+	export let eventLink: string;
 	export let talks: TTalk[];
 	export let isPast = false;
 	export let isDetail = false;
@@ -54,7 +54,7 @@
 				<a href="/">←&nbsp;&nbsp;Back</a>
 			{/if}
 
-			<a href={lumaLink} target="_blank" rel="noopener noreferrer">
+			<a href={eventLink} target="_blank" rel="noopener noreferrer">
 				<span>📅</span> Event Page
 			</a>
 

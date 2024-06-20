@@ -19,10 +19,10 @@ export const meetups: TMeetup[] = [
 	// 	],
 	// },
 	{
-		dateISO: '2024-06-11T16:00:00.000Z',
+		dateISO: '2024-09-17T18:00:00.000Z',
 		time: '18:00 - 21:00',
-		name: '2024/06 Svienna - Svelte Society Vienna',
-		eventLink: 'https://www.meetup.com/svelte-society-austria/events/300929446/',
+		name: '2024/09 Svienna - Svelte Society Vienna',
+		eventLink: 'https://www.meetup.com/svelte-society-austria/events/301760650/',
 		pictureCount: 0,
 		talks: [
 			{
@@ -33,6 +33,25 @@ export const meetups: TMeetup[] = [
 			},
 			{
 				name: 'Something interresting about Svelte',
+			},
+		],
+	},
+	{
+		dateISO: '2024-06-11T16:00:00.000Z',
+		time: '18:00 - 21:00',
+		name: '2024/06 Svienna - Svelte Society Vienna',
+		eventLink: 'https://www.meetup.com/svelte-society-austria/events/300929446/',
+		pictureCount: 0,
+		talks: [
+			{
+				name: 'Building Web Components using Svelte',
+				githubAuthor: 'ermincelikovic',
+				youtubeReplayLink: 'https://youtu.be/T4zwmtUW7Gw',
+			},
+			{
+				name: 'Svelte 5 Runes explained for Vue devs',
+				githubAuthor: 'dreitzner',
+				youtubeReplayLink: 'https://youtu.be/4idUQlFV02I',
 			},
 		],
 	},

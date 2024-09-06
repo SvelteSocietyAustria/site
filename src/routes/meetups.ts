@@ -26,10 +26,12 @@ export const meetups: TMeetup[] = [
 		pictureCount: 0,
 		talks: [
 			{
-				name: 'Super secret talk',
+				name: 'How to embrace Zod in your SvelteKit applications for schema validation and type safety',
+				githubAuthor: 'sjaghori',
 			},
 			{
 				name: 'A great talk to be anounced',
+				githubAuthor: 'dummdidumm',
 			},
 			{
 				name: 'Something interresting about Svelte',

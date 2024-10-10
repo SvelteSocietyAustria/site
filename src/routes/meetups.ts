@@ -26,15 +26,19 @@ export const meetups: TMeetup[] = [
 		pictureCount: 0,
 		talks: [
 			{
+				name: 'Why the hell did you do that',
+				githubAuthor: 'dummdidumm',
+				youtubeReplayLink: 'https://youtu.be/iMUEZWaSzG8',
+			},
+			{
 				name: 'How to embrace Zod in your SvelteKit applications for schema validation and type safety',
 				githubAuthor: 'sjaghori',
+				youtubeReplayLink: 'https://youtu.be/j51whPgjhns',
 			},
 			{
-				name: 'A great talk to be anounced',
-				githubAuthor: 'dummdidumm',
-			},
-			{
-				name: 'Something interresting about Svelte',
+				name: 'Dates - an intersection of a romantic story and Dates in JS',
+				githubAuthor: 'dreitzner',
+				youtubeReplayLink: 'https://youtu.be/9HBVmUv7gpU',
 			},
 		],
 	},
@@ -67,7 +71,7 @@ export const meetups: TMeetup[] = [
 			{
 				name: 'Special Interactive Meetup',
 				githubAuthor: 'SvelteSocietyAustria',
-				youtubeReplayLink: 'https://www.youtube.com/watch?v=WL95jQGMPX0',
+				youtubeReplayLink: 'https://youtu.be/WL95jQGMPX0',
 			},
 		],
 	},
@@ -81,22 +85,22 @@ export const meetups: TMeetup[] = [
 			{
 				name: 'Using SvelteKit to build an interactive portfolio',
 				githubAuthor: 'lmarti17',
-				youtubeReplayLink: 'https://www.youtube.com/watch?v=wAttcVDP4Ec',
+				youtubeReplayLink: 'https://youtu.be/wAttcVDP4Ec',
 			},
 			{
 				name: 'A brief history of prototyping',
 				githubAuthor: 'dreitzner',
-				youtubeReplayLink: 'https://www.youtube.com/watch?v=auqkebVQYXE',
+				youtubeReplayLink: 'https://youtu.be/auqkebVQYXE',
 			},
 			{
 				name: 'Building an Error and Performance Monitoring SDK for SvelteKit',
 				githubAuthor: 'Lms24',
-				youtubeReplayLink: 'https://www.youtube.com/watch?v=N8Hs-LVL_f8',
+				youtubeReplayLink: 'https://youtu.be/N8Hs-LVL_f8',
 			},
 			{
 				name: 'Are you on right route ?',
 				githubAuthor: 'jycouet',
-				youtubeReplayLink: 'https://www.youtube.com/watch?v=K8sKpMSCOiE',
+				youtubeReplayLink: 'https://youtu.be/K8sKpMSCOiE',
 			},
 		],
 	},
@@ -109,7 +113,7 @@ export const meetups: TMeetup[] = [
 			{
 				name: 'SvelteKit: From landing page to offline PWAs',
 				githubAuthor: 'DaniruKun',
-				youtubeReplayLink: 'https://www.youtube.com/watch?v=SaccqQ-JrZ4',
+				youtubeReplayLink: 'https://youtu.be/SaccqQ-JrZ4',
 			},
 			{
 				name: 'Panel: Svelte 5 runes the web faster',

@@ -5,14 +5,19 @@
 	import type { PageData } from './$types';
 	import { onMount } from 'svelte';
 
-	export let data: PageData;
+	interface Props {
+		data: PageData;
+	}
+
+	let { data }: Props = $props();
 
 	const today = new Date();
 
-	let pastMeetups: TMeetup[] = [];
-	let futureMeetups: TMeetup[] = [];
+	let pastMeetups: TMeetup[] = $state([]);
+	let futureMeetups: TMeetup[] = $state([]);
 
-	$: scrolledPx = 0;
+	let scrolledPx = $state(0);
+	
 
 	onMount(() => {
 		window.onscroll = () => {
@@ -29,7 +34,7 @@
 		}
 	});
 
-	$: opacity = 1 - scrolledPx / 250;
+	let opacity = $derived(1 - scrolledPx / 250);
 
 	data.meetups.forEach((m) => {
 		new Date(m.dateISO) < today

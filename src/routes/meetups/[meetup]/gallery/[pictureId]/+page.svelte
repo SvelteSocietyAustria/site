@@ -1,7 +1,7 @@
 <script>
 	import GalleryPicture from './GalleryPicture.svelte';
-	export let data;
-	$: ({ dateISO, pictureCount, deployUrl, pictureId } = data);
+	let { data } = $props();
+	let { dateISO, pictureCount, deployUrl, pictureId } = $derived(data);
 </script>
 
 <GalleryPicture

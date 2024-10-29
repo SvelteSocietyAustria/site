@@ -1,11 +1,15 @@
 <script lang="ts">
-	import type { Action } from 'svelte/types/runtime/action';
+	import type { Action } from 'svelte/action';
 
-	export let githubAuthor: string;
-	export let size: number = 40;
-	export let asObjectUrl = false;
+	interface Props {
+		githubAuthor: string;
+		size?: number;
+		asObjectUrl?: boolean;
+	}
 
-	$: url = `https://avatars.githubusercontent.com/${githubAuthor}`;
+	let { githubAuthor, size = 40, asObjectUrl = false }: Props = $props();
+
+	let url = $derived(`https://avatars.githubusercontent.com/${githubAuthor}`);
 
 	const getObjectUrl = async () => {
 		try {
@@ -23,7 +27,7 @@
 		return '/github/unknown.png';
 	};
 
-	const actionImgSrc: Action<HTMLElement, any> = (node: any) => {
+	const actionImgSrc: Action<HTMLElement, string> = (node: any) => {
 		// initial img
 		refreshImg(node);
 		return {

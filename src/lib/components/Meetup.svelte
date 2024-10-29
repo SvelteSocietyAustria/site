@@ -3,13 +3,27 @@
 	import Talk from '$lib/components/Talk.svelte';
 	import { getMonth, meetupToSlug } from '$lib/util';
 
-	export let dateISO: TDateISO;
-	export let name: string;
-	export let time: string;
-	export let eventLink: string;
-	export let talks: TTalk[];
-	export let isPast = false;
-	export let isDetail = false;
+	interface Props {
+		dateISO: TDateISO;
+		name: string;
+		time?: string | undefined;
+		eventLink: string;
+		talks: TTalk[];
+		isPast?: boolean;
+		isDetail?: boolean;
+		children?: import('svelte').Snippet;
+	}
+
+	let {
+		dateISO,
+		name,
+		time,
+		eventLink,
+		talks,
+		isPast = false,
+		isDetail = false,
+		children
+	}: Props = $props();
 </script>
 
 <li
@@ -34,7 +48,7 @@
 		</header>
 
 		<div class="details">
-			<slot />
+			{@render children?.()}
 			{#each talks as { githubAuthor, name, youtubeReplayLink }}
 				<Talk
 					{githubAuthor}

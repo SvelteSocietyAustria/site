@@ -6,32 +6,41 @@
 	import clickOutside from '@svackages/click-outside-action';
 	import { onMount } from 'svelte';
 
-	export let pictureId: string;
-	export let pictureCount: number;
-	export let deployUrl: string;
-	export let dateISO: TDateISO;
+	interface Props {
+		pictureId: string;
+		pictureCount: number;
+		deployUrl: string;
+		dateISO: TDateISO;
+	}
+
+	let {
+		pictureId,
+		pictureCount,
+		deployUrl,
+		dateISO
+	}: Props = $props();
 	const month = dateISO.split('T')[0] as string;
 
 	const close = () => {
 		if (backUrl) goto(backUrl);
 	};
-	$: backUrl = $page.url.pathname.split('/gallery')[0];
-	$: pictureInt = parseInt(pictureId);
-	$: isFirst = pictureInt === 1;
-	$: isLast = pictureInt === pictureCount;
-	$: prevImageUrl = `${backUrl}/gallery/${getIndexString(pictureInt - 1)}`;
-	$: nextImageUrl = `${backUrl}/gallery/${getIndexString(pictureInt + 1)}`;
+	let backUrl = $derived($page.url.pathname.split('/gallery')[0]);
+	let pictureInt = $derived(parseInt(pictureId));
+	let isFirst = $derived(pictureInt === 1);
+	let isLast = $derived(pictureInt === pictureCount);
+	let prevImageUrl = $derived(`${backUrl}/gallery/${getIndexString(pictureInt - 1)}`);
+	let nextImageUrl = $derived(`${backUrl}/gallery/${getIndexString(pictureInt + 1)}`);
 
 	const back = () => !isFirst && goto(prevImageUrl);
 	const forward = () => !isLast && goto(nextImageUrl);
-	let imageCover = 'cover';
+	let imageCover = $state('cover');
 	const toggleImageCover = () => (imageCover = imageCover === 'cover' ? 'none' : 'cover');
 
 	const SIZES = [640, 1024, 1280, 1920];
-	let dialog: HTMLDialogElement;
+	let dialog: HTMLDialogElement | undefined = $state();
 
 	onMount(() => {
-		dialog.showModal();
+		dialog?.showModal();
 	});
 
 	const handleKeydown = (event: KeyboardEvent) => {
@@ -42,11 +51,11 @@
 	};
 </script>
 
-<svelte:window on:keydown={handleKeydown} />
+<svelte:window onkeydown={handleKeydown} />
 
 <dialog
 	bind:this={dialog}
-	on:close={close}
+	onclose={close}
 >
 	<form
 		method="dialog"
@@ -65,7 +74,7 @@
 				this={isFirst ? 'div' : 'a'}
 				href={prevImageUrl}
 			>
-				<span class="chevron -left" />
+				<span class="chevron -left"></span>
 				previous
 			</svelte:element>
 			<svelte:element
@@ -73,7 +82,7 @@
 				href={nextImageUrl}
 			>
 				next
-				<span class="chevron -right" />
+				<span class="chevron -right"></span>
 			</svelte:element>
 			<a
 				class="end"
@@ -81,7 +90,7 @@
 			>
 		</menu>
 		<button
-			on:click={toggleImageCover}
+			onclick={toggleImageCover}
 			style="--image-cover: {imageCover}"
 			type="button"
 		>

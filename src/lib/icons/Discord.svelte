@@ -1,12 +1,18 @@
 <script lang="ts">
-	export let width = 410;
-	export let height = 410;
-	export let fill = 'currentColor';
+	import type { SVGAttributes } from 'svelte/elements';
+	interface Props extends SVGAttributes<SVGElement> {
+		width?: number;
+		height?: number;
+		fill?: string;
+	}
+
+	let { width = 410, height = 410, fill = 'currentColor', ...restProps }: Props = $props();
 </script>
 
 <svg
 	{width}
 	{height}
+	{...restProps}
 	viewBox="0 0 71 55"
 	fill="none"
 	xmlns="http://www.w3.org/2000/svg"

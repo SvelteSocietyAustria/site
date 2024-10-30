@@ -2,6 +2,11 @@
 	import { page } from '$app/stores';
 	import Footer from './Footer.svelte';
 	import Header from './Header.svelte';
+	interface Props {
+		children?: import('svelte').Snippet;
+	}
+
+	let { children }: Props = $props();
 
 	const getTitle = () => {
 		const firstUrlSegment = $page.url.pathname.split('/')[1] || 'Home';
@@ -81,7 +86,7 @@
 <Header />
 
 <main>
-	<slot />
+	{@render children?.()}
 </main>
 
 <Footer />

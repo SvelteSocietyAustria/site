@@ -3,9 +3,13 @@
 	import { page } from '$app/stores';
 	import { getGeneratedImageBaseUrl, getIndexString } from '$lib/util';
 
-	export let dateISO: TDateISO;
-	export let pictureCount = 0;
-	export let deployUrl: string;
+	interface Props {
+		dateISO: TDateISO;
+		pictureCount?: number;
+		deployUrl: string;
+	}
+
+	let { dateISO, pictureCount = 0, deployUrl }: Props = $props();
 
 	const month = dateISO.split('T')[0] as string;
 
@@ -25,7 +29,7 @@
 			{@const src = getGeneratedImageBaseUrl(deployUrl, month, number, 150)}
 			<a
 				href="{$page.url.pathname}/gallery/{number}"
-				on:click={remember}
+				onclick={remember}
 			>
 				<picture>
 					<source

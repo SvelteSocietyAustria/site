@@ -2,8 +2,8 @@
 	import Meetup from '$lib/components/Meetup.svelte';
 	import MeetupGallery from './MeetupGallery.svelte';
 
-	export let data;
-	$: ({ dateISO, name, eventLink, by, pictureCount, talks, deployUrl } = data);
+	let { data, children } = $props();
+	let { dateISO, name, eventLink, pictureCount, talks, deployUrl } = $derived(data);
 </script>
 
 <div class="wrapper">
@@ -12,7 +12,6 @@
 			{dateISO}
 			{name}
 			{eventLink}
-			{by}
 			{talks}
 			isDetail
 		>
@@ -23,7 +22,7 @@
 			/>
 		</Meetup>
 	</ul>
-	<slot />
+	{@render children?.()}
 
 </div>
 

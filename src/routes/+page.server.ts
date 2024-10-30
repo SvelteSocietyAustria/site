@@ -3,7 +3,6 @@ import { deployUrl } from '$lib/util.server';
 import type { PageServerLoad } from './$types';
 import { meetups } from './meetups';
 
-import logoEmakina from '$lib/assets/Logo-Emakina.svg';
 import logoIteratec from '$lib/assets/Logo-iteratec.png';
 import logoSentry from '$lib/assets/Logo-sentry.svg';
 import logoVercel from '$lib/assets/Logo-vercel.svg';
@@ -45,11 +44,6 @@ const sponsors: TSponsor[] = [
 		name: 'Vercel',
 		website: 'https://vercel.com/',
 		logo: logoVercel,
-	},
-	{
-		name: 'Emakina CEE',
-		website: 'https://www.emakina.com/de-at',
-		logo: logoEmakina,
 	},
 	{
 		name: 'iteratec GmbH',

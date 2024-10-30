@@ -2,10 +2,19 @@
 	import GitHubAvatar from '$lib/components/GitHubAvatar.svelte';
 	import YouTube from '$lib/icons/YouTube.svelte';
 
-	export let githubAuthor: string | undefined;
-	export let name: string;
-	export let youtubeReplayLink: string | undefined;
-	export let isDetail = false;
+	interface Props {
+		githubAuthor: string | undefined;
+		name: string;
+		youtubeReplayLink: string | undefined;
+		isDetail?: boolean;
+	}
+
+	let {
+		githubAuthor,
+		name,
+		youtubeReplayLink,
+		isDetail = false
+	}: Props = $props();
 </script>
 
 <div class="talk">

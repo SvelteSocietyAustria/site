@@ -1,23 +1,19 @@
 <script lang="ts">
-	import { browser } from '$app/environment';
 	import { goto } from '$app/navigation';
 	import { page } from '$app/stores';
 	import GitHubAvatar from '$lib/components/GitHubAvatar.svelte';
 	import html2canvas from 'html2canvas';
 
-	let githubAuthor = $page.url.searchParams.get('who') || '';
-	let title = $page.url.searchParams.get('title') || 'Your awesome title, it will be great 🎉!';
-	let name = $page.url.searchParams.get('name') || '';
+	let githubAuthor = $state($page.url.searchParams.get('who') || '');
+	let title = $state($page.url.searchParams.get('title') || 'Your awesome title, it will be great 🎉!');
+	let name = $state($page.url.searchParams.get('name') || '');
 
-	$: browser && (githubAuthor || name || title) && updateQS();
-
-	function updateQS() {
+	$effect(() => {
 		if (githubAuthor) {
 			$page.url.searchParams.set('who', githubAuthor);
 		} else {
 			$page.url.searchParams.delete('who');
 		}
-		$page.url.searchParams.set('who', githubAuthor);
 		if (title) {
 			$page.url.searchParams.set('title', title);
 		} else {
@@ -29,7 +25,7 @@
 			$page.url.searchParams.delete('name');
 		}
 		goto($page.url.href, { replaceState: true, keepFocus: true });
-	}
+	})
 
 	async function download() {
 		const el = document.querySelector('#tumb');
@@ -45,7 +41,7 @@
 
 		// Draw the captured image onto the new canvas, scaling it in the process
 		const ctx = finalCanvas.getContext('2d');
-		ctx.drawImage(capturedCanvas, 0, 0, 1920, 1080);
+		ctx?.drawImage(capturedCanvas, 0, 0, 1920, 1080);
 
 		// Convert to data URL and create download link
 		const image = finalCanvas.toDataURL();
@@ -54,18 +50,6 @@
 		a.setAttribute('href', image);
 		a.click();
 	}
-
-	export const replaceStateWithQuery = (values: Record<string, string>) => {
-		const url = new URL(window.location.toString());
-		for (let [k, v] of Object.entries(values)) {
-			if (!!v) {
-				url.searchParams.set(encodeURIComponent(k), encodeURIComponent(v));
-			} else {
-				url.searchParams.delete(k);
-			}
-		}
-		history.replaceState({}, '', url);
-	};
 </script>
 
 <div class="wrapper">
@@ -140,7 +124,7 @@
 	<br />
 	<button
 		class="button"
-		on:click={download}
+		onclick={download}
 	>
 		Download
 	</button>

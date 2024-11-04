@@ -19,6 +19,25 @@ export const meetups: TMeetup[] = [
 	// 	],
 	// },
 	{
+		dateISO: '2024-12-16T18:00:00.000Z',
+		time: '18:00 - 21:00',
+		name: '2024/12 Svienna - Svelte Society Vienna',
+		eventLink: 'https://www.meetup.com/svelte-society-austria/events/304285450/',
+		pictureCount: 0,
+		talks: [
+			{
+				name: 'Astro for Svelte Developers',
+				githubAuthor: 'Lms24',
+			},
+			{
+				name: 'A great talk to be anounced',
+			},
+			{
+				name: 'Something interresting about Svelte',
+			},
+		],
+	},
+	{
 		dateISO: '2024-09-17T18:00:00.000Z',
 		time: '18:00 - 21:00',
 		name: '2024/09 Svienna - Svelte Society Vienna',

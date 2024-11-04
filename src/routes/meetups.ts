@@ -26,7 +26,8 @@ export const meetups: TMeetup[] = [
 		pictureCount: 0,
 		talks: [
 			{
-				name: 'Super secret talk',
+				name: 'Astro for Svelte Developers',
+				githubAuthor: 'Lms24',
 			},
 			{
 				name: 'A great talk to be anounced',

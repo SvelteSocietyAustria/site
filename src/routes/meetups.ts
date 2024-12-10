@@ -26,14 +26,16 @@ export const meetups: TMeetup[] = [
 		pictureCount: 0,
 		talks: [
 			{
+				name: 'Recreating Instagram-style stories with Svelte',
+				githubAuthor: 'lmarti17',
+			},
+			{
+				name: 'Deploying SvelteKit on AWS Lambda',
+				githubAuthor: 'sjaghori',
+			},
+			{
 				name: 'Astro for Svelte Developers',
 				githubAuthor: 'Lms24',
-			},
-			{
-				name: 'A great talk to be anounced',
-			},
-			{
-				name: 'Something interresting about Svelte',
 			},
 		],
 	},

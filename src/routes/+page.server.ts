@@ -7,6 +7,8 @@ import logoIteratec from '$lib/assets/Logo-iteratec.png';
 import logoSentry from '$lib/assets/Logo-sentry.svg';
 import logoVercel from '$lib/assets/Logo-vercel.svg';
 import logoDynamicProcess from '$lib/assets/Logo-DynamicProcess.svg';
+import logoAots from '$lib/assets/Logo-aots.svg';
+import logoLeanCoders from '$lib/assets/Logo-LeanCoders.svg';
 
 type TFounder = { displayName: string; twitter: string; githubAuthor: string };
 type TSponsor = { name: string; website: string; logo: string };
@@ -49,6 +51,16 @@ const sponsors: TSponsor[] = [
 		name: 'iteratec GmbH',
 		website: 'https://www.iteratec.com/',
 		logo: logoIteratec,
+	},
+	{
+		name: 'aots',
+		website: 'https://aots.io/',
+		logo: logoAots,
+	},
+	{
+		name: 'Lean Coders',
+		website: 'https://lean-coders.at/',
+		logo: logoLeanCoders,
 	},
 	{
 		name: 'Dynamic Process',

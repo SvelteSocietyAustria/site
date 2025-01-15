@@ -31,10 +31,11 @@ export const meetups: TMeetup[] = [
 			},
 			{
 				githubAuthor: 'jjnp',
-				name: 'A great talk to be anounced',
+				name: 'Svelte in enterprise-scale projects: learnings and best-practices',
 			},
 			{
-				name: 'Something interresting about Svelte',
+				githubAuthor: 'paoloricciuti',
+				name: 'Herd your async tasks!',
 			},
 		],
 	},

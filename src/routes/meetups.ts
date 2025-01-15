@@ -27,7 +27,7 @@ export const meetups: TMeetup[] = [
 		talks: [
 			{
 				githubAuthor: 'dreitzner',
-				name: 'Super secret talk',
+				name: 'Hey Svelte! Extend my CMS',
 			},
 			{
 				githubAuthor: 'jjnp',

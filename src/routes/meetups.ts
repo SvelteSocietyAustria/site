@@ -27,14 +27,15 @@ export const meetups: TMeetup[] = [
 		talks: [
 			{
 				githubAuthor: 'dreitzner',
-				name: 'Super secret talk',
+				name: 'Hey Svelte! Extend my CMS',
 			},
 			{
 				githubAuthor: 'jjnp',
-				name: 'A great talk to be anounced',
+				name: 'Svelte in enterprise-scale projects: learnings and best-practices',
 			},
 			{
-				name: 'Something interresting about Svelte',
+				githubAuthor: 'paoloricciuti',
+				name: 'Herd your async tasks!',
 			},
 		],
 	},

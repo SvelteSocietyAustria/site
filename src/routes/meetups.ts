@@ -19,7 +19,7 @@ export const meetups: TMeetup[] = [
 	// 	],
 	// },
 	{
-		dateISO: '2025-04-28T18:00:00.000Z',
+		dateISO: '2025-04-28T16:00:00.000Z',
 		time: '18:00 - 21:00',
 		name: '2025/04 Svienna - Svelte Society Vienna',
 		eventLink: 'https://www.meetup.com/svelte-society-austria/events/306377144/',

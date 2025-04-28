@@ -30,12 +30,12 @@ export const meetups: TMeetup[] = [
 				name: 'Using SvelteKit and MIT appinventor to inspire young girls for tech.',
 			},
 			{
-				githubAuthor: 'Lms24',
-				name: 'Tracing the Slowdown: OpenTelemetry in SvelteKit Made Easy',
+				githubAuthor: 'jycouet',
+				name: 'Lightning talk: 10 tips in 5 mins!',
 			},
 			{
-				// githubAuthor: '',
-				name: 'Something interresting about Svelte',
+				githubAuthor: 'Lms24',
+				name: 'Tracing the Slowdown: OpenTelemetry in SvelteKit Made Easy',
 			},
 		],
 	},

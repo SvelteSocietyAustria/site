@@ -19,6 +19,27 @@ export const meetups: TMeetup[] = [
 	// 	],
 	// },
 	{
+		dateISO: '2025-06-23T16:00:00.000Z',
+		time: '18:00 - 21:00',
+		name: '2025/06 Svienna - Svelte Society Vienna',
+		eventLink: 'https://www.meetup.com/svelte-society-austria/events/307651826/',
+		pictureCount: 0,
+		talks: [
+			{
+				githubAuthor: 'mgrubinger',
+				name: 'Svelte at Geizhals',
+			},
+			{
+				githubAuthor: 'svelte-society',
+				name: 'Secret talk!',
+			},
+			{
+				githubAuthor: 'jycouet',
+				name: 'Adding full to your full-stack sveltekit app',
+			},
+		],
+	},
+	{
 		dateISO: '2025-04-28T16:00:00.000Z',
 		time: '18:00 - 21:00',
 		name: '2025/04 Svienna - Svelte Society Vienna',
@@ -31,7 +52,7 @@ export const meetups: TMeetup[] = [
 			},
 			{
 				githubAuthor: 'jycouet',
-				name: 'Lightning talk: 10 tips in 5 mins!',
+				name: '💡 Lightning talk: 10 tips in 5 mins!',
 			},
 			{
 				githubAuthor: 'Lms24',
@@ -196,7 +217,7 @@ export const meetups: TMeetup[] = [
 				youtubeReplayLink: 'https://youtu.be/u41-MtPGH04',
 			},
 			{
-				name: 'Lightning talk: You might not need a slider library',
+				name: '💡 Lightning talk: You might not need a slider library',
 				githubAuthor: 'ermincelikovic',
 				youtubeReplayLink: 'https://youtu.be/dSUmtijkFOc',
 			},

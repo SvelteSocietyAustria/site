@@ -17,7 +17,6 @@
 	let futureMeetups: TMeetup[] = $state([]);
 
 	let scrolledPx = $state(0);
-	
 
 	onMount(() => {
 		window.onscroll = () => {
@@ -118,7 +117,7 @@
 		</div>
 
 		<div class="founding-members__list">
-			{#each data.founders as { displayName, twitter, githubAuthor }}
+			{#each data.founders as { displayName, twitter, githubAuthor, bluesky }}
 				<div class="founder">
 					<GitHubAvatar
 						{githubAuthor}
@@ -127,12 +126,22 @@
 					<div>
 						<h3 class="h5">{displayName}</h3>
 						<p>
-							<a
-								href={twitter}
-								target="_blank"
-								rel="noopener noreferrer">twitter</a
-							>
-							/
+							{#if bluesky}
+								<a
+									href={bluesky}
+									target="_blank"
+									rel="noopener noreferrer">bluesky</a
+								>
+								/
+							{/if}
+							{#if twitter}
+								<a
+									href={twitter}
+									target="_blank"
+									rel="noopener noreferrer">twitter</a
+								>
+								/
+							{/if}
 							<a
 								href="https://github.com/{githubAuthor}"
 								target="_blank"

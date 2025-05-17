@@ -11,6 +11,7 @@
 		talks: TTalk[];
 		isPast?: boolean;
 		isDetail?: boolean;
+		pictureCount?: number;
 		children?: import('svelte').Snippet;
 	}
 
@@ -22,7 +23,8 @@
 		talks,
 		isPast = false,
 		isDetail = false,
-		children
+		pictureCount,
+		children,
 	}: Props = $props();
 </script>
 
@@ -32,7 +34,6 @@
 	data-month={getMonth(dateISO)}
 >
 	<section class:isPast>
-
 		<header>
 			<div class="calendar">
 				<div class="calendar__day">{new Date(dateISO).getDate()}</div>
@@ -68,12 +69,26 @@
 				<a href="/">←&nbsp;&nbsp;Back</a>
 			{/if}
 
-			<a href={eventLink} target="_blank" rel="noopener noreferrer">
-				<span>📅</span> Event Page
+			<a
+				href={eventLink}
+				target="_blank"
+				rel="noopener noreferrer"
+			>
+				{#if isPast}
+					<span>📅</span> Event Page
+				{:else}
+					<span>📅</span> Register to the event
+				{/if}
 			</a>
 
 			{#if isPast}
-				<a href="/meetups/{meetupToSlug(name)}">Details</a>
+				<a href="/meetups/{meetupToSlug(name)}">
+					{#if pictureCount && pictureCount > 0}
+						Details ({pictureCount} pictures)
+					{:else}
+						Details
+					{/if}
+				</a>
 			{/if}
 		</footer>
 	</section>
@@ -100,7 +115,7 @@
 			display: flex;
 			justify-content: center;
 			align-items: center;
-			padding: .3rem;
+			padding: 0.3rem;
 			color: var(--color-black);
 			background-color: var(--color-white);
 		}
@@ -109,7 +124,7 @@
 			display: flex;
 			justify-content: center;
 			align-items: center;
-			padding: .3rem;
+			padding: 0.3rem;
 			color: var(--color-white);
 			background-color: var(--color-red);
 		}
@@ -134,7 +149,7 @@
 		z-index: 3;
 		display: flex;
 		flex-direction: column;
-		width: 100%
+		width: 100%;
 	}
 
 	footer {

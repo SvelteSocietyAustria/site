@@ -10,7 +10,7 @@ import logoDynamicProcess from '$lib/assets/Logo-DynamicProcess.svg';
 import logoAots from '$lib/assets/Logo-aots.svg';
 import logoLeanCoders from '$lib/assets/Logo-LeanCoders.svg';
 
-type TFounder = { displayName: string; twitter: string; githubAuthor: string };
+type TFounder = { displayName: string; twitter?: string; githubAuthor: string; bluesky?: string };
 type TSponsor = { name: string; website: string; logo: string };
 
 const founders: TFounder[] = [
@@ -21,7 +21,7 @@ const founders: TFounder[] = [
 	},
 	{
 		displayName: 'Jean-Yves Couët',
-		twitter: 'https://twitter.com/jycouet',
+		bluesky: 'https://bsky.app/profile/jyc.dev',
 		githubAuthor: 'jycouet',
 	},
 	{

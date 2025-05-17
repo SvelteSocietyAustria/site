@@ -9,12 +9,7 @@
 		isDetail?: boolean;
 	}
 
-	let {
-		githubAuthor,
-		name,
-		youtubeReplayLink,
-		isDetail = false
-	}: Props = $props();
+	let { githubAuthor, name, youtubeReplayLink, isDetail = false }: Props = $props();
 </script>
 
 <div class="talk">
@@ -26,9 +21,23 @@
 			You?
 		{/if}
 	</div>
-	<span>
-		{name}
-	</span>
+	<div style="display: flex; align-items: center; justify-content: space-between; width: 100%;">
+		<span>
+			{name}
+		</span>
+		{#if youtubeReplayLink && !isDetail}
+			<a
+				href={youtubeReplayLink}
+				class="rewatch"
+				style="vertical-align: middle;"
+			>
+				<YouTube
+					height={28}
+					width={30}
+				/>
+			</a>
+		{/if}
+	</div>
 </div>
 
 {#if youtubeReplayLink && isDetail}

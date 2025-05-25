@@ -30,8 +30,8 @@ export const meetups: TMeetup[] = [
 				name: 'Svelte at Geizhals',
 			},
 			{
-				githubAuthor: 'svelte-society',
-				name: 'Secret talk!',
+				githubAuthor: 'derharry',
+				name: 'ZeeltePHP (Svelte + PHP)',
 			},
 			{
 				githubAuthor: 'jycouet',

@@ -21,6 +21,18 @@ export const meetups: TMeetup[] = [
 	{
 		dateISO: '2025-06-23T16:00:00.000Z',
 		time: '18:00 - 21:00',
+		name: '2025/09 Svienna - Svelte Society Vienna',
+		eventLink: 'https://www.meetup.com/svelte-society-austria/events/308607820/',
+		pictureCount: 0,
+		talks: [
+			{
+				name: 'Talks to be announced! Get in touch with us if you would like to give a talk',
+			},
+		],
+	},
+	{
+		dateISO: '2025-06-23T16:00:00.000Z',
+		time: '18:00 - 21:00',
 		name: '2025/06 Svienna - Svelte Society Vienna',
 		eventLink: 'https://www.meetup.com/svelte-society-austria/events/307651826/',
 		pictureCount: 0,

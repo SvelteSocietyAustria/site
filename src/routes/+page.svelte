@@ -40,6 +40,9 @@
 			? (pastMeetups = [...pastMeetups, m])
 			: (futureMeetups = [...futureMeetups, m]);
 	});
+
+	// Sort future meetups by date (earliest first) to get the most immediate upcoming meetup
+	futureMeetups.sort((a, b) => new Date(a.dateISO).getTime() - new Date(b.dateISO).getTime());
 </script>
 
 <section

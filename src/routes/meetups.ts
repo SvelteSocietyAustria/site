@@ -61,10 +61,12 @@ export const meetups: TMeetup[] = [
 			{
 				githubAuthor: 'dreitzner',
 				name: 'Using SvelteKit and MIT appinventor to inspire young girls for tech.',
+				youtubeReplayLink: 'https://youtu.be/j51whPgjhns',
 			},
 			{
 				githubAuthor: 'jycouet',
 				name: '💡 Lightning talk: 10 tips in 5 mins!',
+				youtubeReplayLink: 'https://www.youtube.com/watch?v=hptgxIdnDdg',
 			},
 			{
 				githubAuthor: 'Lms24',

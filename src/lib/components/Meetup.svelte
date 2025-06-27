@@ -1,4 +1,5 @@
 <script lang="ts">
+	import { page } from '$app/stores';
 	import type { TTalk, TMeetupBy } from '$lib/components/TSvienna';
 	import Talk from '$lib/components/Talk.svelte';
 	import { getMonth, meetupToSlug } from '$lib/util';
@@ -80,8 +81,7 @@
 					<span>📅</span> Register to the event
 				{/if}
 			</a>
-
-			{#if isPast}
+			{#if isPast && $page.route.id !== '/meetups/[meetup]'}
 				<a href="/meetups/{meetupToSlug(name)}">
 					{#if pictureCount && pictureCount > 0}
 						Details ({pictureCount} pictures)

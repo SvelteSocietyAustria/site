@@ -26,7 +26,15 @@ export const meetups: TMeetup[] = [
 		pictureCount: 0,
 		talks: [
 			{
-				name: 'Talks to be announced! Get in touch with us if you would like to give a talk',
+				githubAuthor: 'jjnp',
+				name: 'Svelte and LLMs - A Token Effort'
+			},
+			{
+				githubAuthor: 'dreitzner',
+				name: 'Async ⏳ Svelte'
+			},
+			{
+				name: 'Get in touch with us if you would like to give a talk',
 			},
 		],
 	},

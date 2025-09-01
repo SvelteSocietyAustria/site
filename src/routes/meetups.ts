@@ -27,11 +27,11 @@ export const meetups: TMeetup[] = [
 		talks: [
 			{
 				githubAuthor: 'jjnp',
-				name: 'Svelte and LLMs - A Token Effort'
+				name: 'Svelte and LLMs - A Token Effort',
 			},
 			{
 				githubAuthor: 'dreitzner',
-				name: 'Async ⏳ Svelte'
+				name: 'Async ⏳ Svelte',
 			},
 			{
 				name: 'Get in touch with us if you would like to give a talk',
@@ -48,14 +48,17 @@ export const meetups: TMeetup[] = [
 			{
 				githubAuthor: 'mgrubinger',
 				name: 'Svelte at Geizhals',
+				youtubeReplayLink: 'https://www.youtube.com/watch?v=aJVdfPk9WmI',
 			},
 			{
 				githubAuthor: 'derharry',
 				name: 'ZeeltePHP (Svelte + PHP)',
+				youtubeReplayLink: 'https://www.youtube.com/watch?v=0sm4oPwvPVU',
 			},
 			{
 				githubAuthor: 'jycouet',
 				name: 'Adding full to your full-stack sveltekit app',
+				youtubeReplayLink: 'https://www.youtube.com/watch?v=A3cqzv-zRe8',
 			},
 		],
 	},

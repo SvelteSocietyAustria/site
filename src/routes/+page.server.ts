@@ -1,7 +1,5 @@
-import type { TMeetup } from '$lib/components/TSvienna';
 import { deployUrl } from '$lib/util.server';
-import type { PageServerLoad } from './$types';
-import { meetups } from './meetups';
+import { getFutureMeetups, getPastMeetups } from './meetups';
 
 import logoIteratec from '$lib/assets/Logo-iteratec.png';
 import logoSentry from '$lib/assets/Logo-sentry.svg';
@@ -80,9 +78,12 @@ export const config = {
 	},
 };
 
-export const load: PageServerLoad<{ meetups: TMeetup[] }> = () => {
+export const load = () => {
+	const futureMeetups = getFutureMeetups();
+	const pastMeetups = getPastMeetups();
 	return {
-		meetups,
+		futureMeetups,
+		pastMeetups,
 		deployUrl,
 		founders,
 		sponsors,

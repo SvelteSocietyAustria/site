@@ -1,4 +1,19 @@
 import type { TMeetup } from '$lib/components/TSvienna';
+
+export const getFutureMeetups = () => {
+	const today = new Date();
+	return meetups
+		.filter((m) => new Date(m.dateISO) > today)
+		.sort((a, b) => new Date(b.dateISO).getTime() - new Date(a.dateISO).getTime());
+};
+export const getPastMeetups = (limit = 5) => {
+	const today = new Date();
+	return meetups
+		.filter((m) => new Date(m.dateISO) < today)
+		.sort((a, b) => new Date(b.dateISO).getTime() - new Date(a.dateISO).getTime())
+		.slice(0, limit);
+};
+
 export const meetups: TMeetup[] = [
 	// {
 	// 	dateISO: '2024-06-11T16:00:00.000Z',

@@ -1,5 +1,4 @@
 <script lang="ts">
-	import type { TMeetup } from '$lib/components/TSvienna';
 	import MeetupCollection from '$lib/components/MeetupCollection.svelte';
 	import GitHubAvatar from '$lib/components/GitHubAvatar.svelte';
 	import type { PageData } from './$types';
@@ -10,11 +9,6 @@
 	}
 
 	let { data }: Props = $props();
-
-	const today = new Date();
-
-	let pastMeetups: TMeetup[] = $state([]);
-	let futureMeetups: TMeetup[] = $state([]);
 
 	let scrolledPx = $state(0);
 
@@ -34,15 +28,6 @@
 	});
 
 	let opacity = $derived(1 - scrolledPx / 250);
-
-	data.meetups.forEach((m) => {
-		new Date(m.dateISO) < today
-			? (pastMeetups = [...pastMeetups, m])
-			: (futureMeetups = [...futureMeetups, m]);
-	});
-
-	// Sort future meetups by date (earliest first) to get the most immediate upcoming meetup
-	futureMeetups.sort((a, b) => new Date(a.dateISO).getTime() - new Date(b.dateISO).getTime());
 </script>
 
 <section
@@ -63,7 +48,7 @@
 		<div class="title">
 			<h2 class="h6 uppercase">Upcoming Event</h2>
 		</div>
-		<MeetupCollection meetups={futureMeetups} />
+		<MeetupCollection meetups={data.futureMeetups} />
 	</div>
 </section>
 
@@ -107,9 +92,15 @@
 			<h2 class="h6 uppercase">Past Events</h2>
 		</div>
 		<MeetupCollection
-			meetups={pastMeetups}
+			meetups={data.pastMeetups}
 			isPast
 		/>
+		<div class="button-wrapper">
+			<a
+				class="button"
+				href="/past-meetups">All past meetups</a
+			>
+		</div>
 	</div>
 </section>
 
@@ -246,6 +237,24 @@
 		position: relative;
 		background: var(--color-black);
 		z-index: 2;
+	}
+	.button-wrapper {
+		margin-top: 3rem;
+		display: flex;
+		justify-content: center;
+	}
+	.button {
+		display: inline-block;
+		padding: 0.5rem 1rem;
+		background: var(--color-red);
+		color: var(--color-white);
+		border-radius: 4px;
+		text-decoration: none;
+		transition: 200ms all;
+
+		&:hover {
+			background: var(--color-black-light);
+		}
 	}
 
 	.founding-members {

@@ -1,4 +1,19 @@
 import type { TMeetup } from '$lib/components/TSvienna';
+
+export const getFutureMeetups = () => {
+	const today = new Date();
+	return meetups
+		.filter((m) => new Date(m.dateISO) > today)
+		.sort((a, b) => new Date(b.dateISO).getTime() - new Date(a.dateISO).getTime());
+};
+export const getPastMeetups = (limit = 5) => {
+	const today = new Date();
+	return meetups
+		.filter((m) => new Date(m.dateISO) < today)
+		.sort((a, b) => new Date(b.dateISO).getTime() - new Date(a.dateISO).getTime())
+		.slice(0, limit);
+};
+
 export const meetups: TMeetup[] = [
 	// {
 	// 	dateISO: '2024-06-11T16:00:00.000Z',
@@ -18,6 +33,24 @@ export const meetups: TMeetup[] = [
 	// 		},
 	// 	],
 	// },
+	{
+		dateISO: '2025-12-02T16:00:00.000Z',
+		time: '18:00 - 21:00',
+		name: '2025/12 Svienna - Svelte Society Vienna',
+		eventLink: 'https://www.meetup.com/svelte-society-austria/events/311339676/',
+		pictureCount: 0,
+		talks: [
+			{
+				name: 'Super secret talk',
+			},
+			{
+				name: 'A great talk to be anounced',
+			},
+			{
+				name: 'Something interresting about Svelte',
+			},
+		],
+	},
 	{
 		dateISO: '2025-09-16T16:00:00.000Z',
 		time: '18:00 - 21:00',

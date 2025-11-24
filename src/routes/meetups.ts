@@ -48,6 +48,10 @@ export const meetups: TMeetup[] = [
 				name: 'Svelte Under the Hood',
 				githubAuthor: 'HouseinIsProgramming',
 			},
+			{
+				name: 'How Svelte took over Apple - lessons from the App Store',
+				githubAuthor: 'danirukun',
+			},
 		],
 	},
 	{

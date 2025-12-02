@@ -3,13 +3,14 @@
 	import GitHub from '$lib/icons/GitHub.svelte';
 	import Twitter from '$lib/icons/Twitter.svelte';
 	import YouTube from '$lib/icons/YouTube.svelte';
+	import { route } from '$lib/ROUTES';
 </script>
 
 <footer>
 	<!-- discord, twitter -->
 	<!-- https://twitter.com/svelteaustria -->
 	<a href="/thumbnail">Thumbnail</a>
-	<a href="https://sveltesociety.dev/about">code of conduct</a>
+	<a href={route('/code-of-conduct')}>code of conduct</a>
 	<a
 		class="icon"
 		href="https://twitter.com/svelteaustria"

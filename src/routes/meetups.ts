@@ -41,16 +41,16 @@ export const meetups: TMeetup[] = [
 		pictureCount: 0,
 		talks: [
 			{
-				name: 'CMS-Free, Editable Websites with Svelte and Svedit',
-				githubAuthor: 'michael',
-			},
-			{
 				name: 'Svelte Under the Hood',
 				githubAuthor: 'HouseinIsProgramming',
 			},
 			{
 				name: 'How Svelte took over Apple - lessons from the App Store',
 				githubAuthor: 'danirukun',
+			},
+			{
+				name: 'CMS-Free, Editable Websites with Svelte and Svedit',
+				githubAuthor: 'michael',
 			},
 		],
 	},

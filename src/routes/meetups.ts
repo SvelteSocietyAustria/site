@@ -55,7 +55,7 @@ export const meetups: TMeetup[] = [
 		time: '18:00 - 21:00',
 		name: '2025/12 Svienna - Svelte Society Vienna',
 		eventLink: 'https://www.meetup.com/svelte-society-austria/events/311339676/',
-		pictureCount: 0,
+		pictureCount: 15,
 		talks: [
 			{
 				name: 'Svelte Under the Hood',
@@ -81,13 +81,12 @@ export const meetups: TMeetup[] = [
 			{
 				githubAuthor: 'jjnp',
 				name: 'Svelte and LLMs - A Token Effort',
+				youtubeReplayLink: 'https://www.youtube.com/watch?v=V6urwDivl64',
 			},
 			{
 				githubAuthor: 'dreitzner',
 				name: 'Async ⏳ Svelte',
-			},
-			{
-				name: 'Get in touch with us if you would like to give a talk',
+				youtubeReplayLink: 'https://www.youtube.com/watch?v=Q6FbSxRexNg',
 			},
 		],
 	},
